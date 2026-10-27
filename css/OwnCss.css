@@ -1,0 +1,280 @@
+/* 呼叫外部用的字體 上網找GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&family=Zen+Old+Mincho&display=swap');
+
+/* ---------- 深色木質 × 金工鍛造色彩系統 ---------- */
+:root {
+    /* 木質色系 Wood */
+
+    --wood-dark: #241914;       /* 深胡桃木／黑木 */
+    --wood-dark-alt: #241A14;   /* 燻黑木頭 */
+    --wood-main: #33231b;       /* 深棕木色 */
+    --wood-main-alt: #33241B;   /* 老木頭 */
+    --wood-main-original: #c7a77a; /* 原始木質主色：暖米棕／淺木色 */
+    --wood-light: #4a3224;      /* 暖棕木色 */
+    --wood-light-alt: #493528;  /* 舊木板 */
+
+    /* 紅色系 Red b*/
+
+    --wood-red: #9E2F2F;        /* 深磚紅／鐵鏽紅 */
+
+    /* 金工／鍛造鐵色系 Iron */
+    --iron-dark: #171717;       /* 鍛造黑 */
+    --iron-dark-alt: #1C1B18;   /* 鍛造黑鐵 */
+    --iron-main: #242424;       /* 深灰鐵色 */
+    --iron-main-alt: #2C2A25;   /* 老鐵灰 */
+    --iron-light: #343434;      /* 較亮的金屬灰 */
+
+    /* 銅色系 */
+
+    --copper-main: #b06a3c;     /* 銅色／鐵鏽金屬色 */
+
+    /* 金色系 Gold */
+
+    --gold-dark: #8a672d;        /* 暗金色／舊金／黃銅色 */
+    --gold-main: #c9a45c;        /* 溫暖金色 */
+    --gold-light: #e2c47a;       /* 亮金色／金屬高光 */
+
+    /* 黃銅色系 Brass */
+
+    --brass-dark: #6F5638;       /* 氧化黃銅 */
+    --brass-main: #9B7B4F;       /* 舊黃銅 */
+    --brass-light: #C2A16A;      /* 褪色金屬金 */
+
+    /* 紙張色系 Paper  */
+
+    --paper-main: #E3D6BD;       /* 泛黃紙張 */
+    --paper-dark: #B8AA91;       /* 舊紙灰米色 */
+
+    /* 文字色系 Text */
+
+    --text-main: #f3ead5;        /* 原始主文字：暖米白／羊皮紙色 */
+    --text-main-alt: #f0e5d0;    /* 主文字：暖米白 */
+    --text-sub: #b9aa92;         /* 次要文字：灰米色 */
+
+    /* 邊框與裝飾 Border */
+
+    --border-gold: rgba(201, 164, 92, 0.45); /* 半透明金色邊框 */
+}
+
+
+
+/* 改變網站中所有字體 呼叫第一排IMPORT的設定字形 */
+body {
+    font-family: "Yusei Magic", sans-serif;
+}
+
+/* 字體粗細度呼叫 */
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+/* 標題設計版型 */
+.mytitle-01 {
+    font-size: 36px;
+    font-weight: 500;
+    text-align: center;
+    /* 舊黃銅色：低調、溫暖，適合小標題 */
+    color: #B08D57;
+}
+
+.mytitle-02 {
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+    /* 古銅金：帶有日本老工房與金屬氧化後的質感 */
+    color: #C49A5A;
+}
+
+.mytitle-03 {
+    font-size: 52px;
+    font-weight: 900;
+    text-align: center;
+    color: #D4AF6A;
+    /* 鍛造金：較明亮的金屬色，作為主標題視覺焦點 */
+    /* 給予範圍背景色 */
+    background-color: #C49A5A;
+
+}
+
+/* 背景圖用  把圖片預設的尺寸位置寫好*/
+
+.bg-img {
+    /* 定位背景圖片位置 X軸 Y軸 */
+    background-position: center center;
+    /* 定位背景圖片尺寸 COVER自動置中調整 */
+    background-size: cover;
+}
+
+/* 時間軸：中間垂直線 */
+.timeline-section {
+    position: relative;
+}
+/* ::before：在該元素(timeline-section)的內容前面建立一個偽元素。 */
+.timeline-section::before {
+    position: absolute;
+    content: "";
+    width: 5px;
+    background-color: rgba(102, 81, 12, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ==============================
+   時間軸：圓形定位點
+   ============================== */
+.timeline-section-pointer {
+    position: relative;
+}
+
+.timeline-section-pointer::before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: rgba(102, 81, 12, 0.8);
+    border-radius: 50%;
+    border: 5px solid rgba(48, 37, 1, 0.8);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+
+/* 卷軸動畫ROLLER */
+/* .roller-t top 移動 */
+.roller-t {
+    position: relative;
+    overflow: hidden;
+    /*隱藏移動的物件ROLLER*/
+}
+
+.roller-t .rollerbox-t {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(155, 143, 054, 0.3);
+    transform: translateY(-100%);
+    transition: transform 3S;
+    display: flex;
+    /*物件指定成FLEX，才能做下面的置中動作*/
+    justify-content: center;
+    /*水平置中*/
+    align-items: center;
+    /*垂直置中*/
+}
+
+.roller-t:hover .rollerbox-t {
+    transform: translateY(0);
+}
+
+/* .roller-b bottom移動 */
+.roller-b {
+    position: relative;
+    overflow: hidden;
+    /*隱藏移動的物件ROLLER*/
+}
+
+.roller-b .rollerbox-b {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(155, 143, 054, 0.3);
+    transform: translateY(100%);
+    transition: transform 3S;
+    display: flex;
+    /*物件指定成FLEX，才能做下面的置中動作*/
+    justify-content: center;
+    /*水平置中*/
+    align-items: center;
+    /*垂直置中*/
+}
+
+.roller-b:hover .rollerbox-b {
+    transform: translateY(0);
+}
+
+/* .roller-l LEFT移動 */
+.roller-l {
+    position: relative;
+    overflow: hidden;
+    /*隱藏移動的物件ROLLER*/
+}
+
+.roller-l .rollerbox-l {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(155, 143, 054, 0.3);
+    transform: translateX(-100%);
+    transition: transform 3S;
+    display: flex;
+    /*物件指定成FLEX，才能做下面的置中動作*/
+    justify-content: center;
+    /*水平置中*/
+    align-items: center;
+    /*垂直置中*/
+}
+
+.roller-l:hover .rollerbox-l {
+    transform: translateX(0);
+}
+
+/* .roller-R RIGHT移動 */
+.roller-r {
+    position: relative;
+    overflow: hidden;
+    /*隱藏移動的物件ROLLER*/
+}
+
+.roller-r .rollerbox-r {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(155, 143, 054, 0.3);
+    transform: translateX(100%);
+    transition: transform 3S;
+    display: flex;
+    /*物件指定成FLEX，才能做下面的置中動作*/
+    justify-content: center;
+    /*水平置中*/
+    align-items: center;
+    /*垂直置中*/
+}
+
+.roller-r:hover .rollerbox-r {
+    transform: translateX(0);
+}

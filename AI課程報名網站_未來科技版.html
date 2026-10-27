@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SHIFT Learning Lab｜AI 輔助全端程式設計</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/future-tech.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+<a class="skip-link" href="#registration">跳至報名表單</a>
+<header class="site-header"><nav class="nav-shell">
+<a class="brand" href="#top"><span class="brand-symbol">S<span>/</span></span><span>SHIFT<small>LEARNING LAB</small></span></a>
+<div class="nav-links"><a href="#curriculum">課程內容</a><a href="#method">學習方式</a><a href="#registration">立即報名</a></div>
+<span class="demo-pill">● 教學模擬版</span>
+</nav></header>
+<main id="top">
+<section class="hero">
+<div class="hero-grid">
+<div class="hero-copy"><p class="eyebrow">01 / DIGITAL SKILLS — FUTURE READY</p>
+<h1>把想法<br>寫成<span>能運作的產品。</span></h1>
+<p class="hero-lead">AI 輔助全端程式設計</p>
+<p class="hero-description">從網頁結構、互動介面到資料交換，練習用程式拆解問題，再用 AI 協作加速探索與除錯。</p>
+<div class="hero-actions"><a class="button-main" href="#registration">開始填寫 ↘</a><a class="text-link" href="#curriculum">探索課程內容 →</a></div>
+<div class="hero-meta"><span><b>01</b> 結構化思考</span><span><b>02</b> 動手實作</span><span><b>03</b> AI 協作</span></div>
+</div>
+<div class="hero-art"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+<div class="code-window"><div class="window-bar"><span>● ● ●</span><span>learning-path.js</span><b>LIVE CONCEPT</b></div>
+<div class="code"><p><i>01</i> <em>const</em> future = {</p><p><i>02</i> &nbsp; skills: [</p><p><i>03</i> &nbsp;&nbsp; <strong>'HTML / CSS'</strong>,</p><p><i>04</i> &nbsp;&nbsp; <strong>'JavaScript'</strong>,</p><p><i>05</i> &nbsp;&nbsp; <strong>'jQuery + AJAX'</strong></p><p><i>06</i> &nbsp; ],</p><p><i>07</i> &nbsp; coPilot: <mark>true</mark>,</p><p><i>08</i> &nbsp; keepLearning: <mark>true</mark></p><p><i>09</i> };</p><div class="code-output">✳ &nbsp; Idea → Code → Iterate <b>▍</b></div></div></div>
+<div class="float-tag tag-one">✳ AI CO-PILOT</div><div class="float-tag tag-two">⌘ WEB DEVELOPMENT</div><small class="art-caption">FIG. 01 / BUILD YOUR NEXT</small></div>
+</div><div class="hero-foot"><span>LEARN BY BUILDING</span><span>SCROLL TO EXPLORE ↓</span></div>
+</section>
+<section class="curriculum section-wrap" id="curriculum"><div class="section-heading"><div><p class="eyebrow">02 / THE TOOLKIT</p><h2>從基礎開始，<br><span>把每個環節串起來。</span></h2></div><p>不只學語法，也練習理解資料如何流動、介面如何回應，以及如何善用 AI 協助自己思考。</p></div>
+<div class="curriculum-list">
+<article><small>A / 01</small><b class="topic-icon purple">&lt;/&gt;</b><div><h3>網頁結構與視覺</h3><p>HTML5、CSS3、Bootstrap 5、RWD 響應式版面</p></div><span>↗</span></article>
+<article><small>A / 02</small><b class="topic-icon cyan">{ }</b><div><h3>互動與資料處理</h3><p>JavaScript、jQuery、事件監聽、表單驗證</p></div><span>↗</span></article>
+<article><small>A / 03</small><b class="topic-icon lime">↔</b><div><h3>非同步資料交換</h3><p>AJAX、JSON、資料載入與錯誤處理</p></div><span>↗</span></article>
+<article><small>A / 04</small><b class="topic-icon orange">✳</b><div><h3>AI 協作開發</h3><p>拆解需求、閱讀程式、產生測試與協助除錯</p></div><span>↗</span></article>
+</div></section>
+<section class="method" id="method"><div class="method-inner"><div><p class="eyebrow">03 / HOW WE LEARN</p><h2>不是只看懂，<br>而是自己做得出來。</h2></div><article><small>01</small><h3>理解需求</h3><p>先說清楚要解決什麼問題。</p></article><article><small>02</small><h3>拆解實作</h3><p>將功能拆成可測試的小步驟。</p></article><article><small>03</small><h3>反覆驗證</h3><p>閱讀錯誤訊息、測試並修正。</p></article></div></section>
+<section class="registration" id="registration"><div class="registration-layout"><div class="form-main">
+<div class="form-title"><div><p class="eyebrow">04 / REGISTRATION FORM</p><h2>預約你的<br><span>下一個技能。</span></h2></div><small>SHIFT / FORM<br>EDITION 2026</small></div>
+<p class="form-intro">填寫以下資料，完成後可在本頁預覽報名內容。此頁為前端教學模擬，不會將資料送至伺服器。</p>
+<form id="registrationForm" novalidate>
+<section class="form-block"><div class="block-title"><span>01</span><h3>基本資料</h3><small>* 為必填欄位</small></div><div class="row g-3">
+<div class="col-md-6"><label for="username" class="form-label">姓名 <b>*</b></label><input id="username" name="username" class="form-control" placeholder="請輸入 2～8 個字" autocomplete="name" required><div class="valid-feedback">姓名長度符合規定。</div><div class="invalid-feedback">請輸入 2～8 個字。</div></div>
+<div class="col-md-6"><label for="email" class="form-label">Email <b>*</b></label><input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" autocomplete="email" required><small class="hint">教學規則：8～15 字，且符合 Email 格式。</small><div class="valid-feedback">Email 符合規定。</div><div class="invalid-feedback">請確認 Email 格式及長度。</div></div>
+<div class="col-md-6"><label for="password" class="form-label">設定密碼 <b>*</b></label><input type="password" id="password" name="password" class="form-control" placeholder="8～16 字，含大小寫與特殊符號" autocomplete="new-password" required><small class="hint">僅用於本次前端驗證，不會儲存或顯示明文。</small><div class="valid-feedback">密碼符合規定。</div><div class="invalid-feedback">需 8～16 字，含大寫、小寫及特殊符號。</div></div>
+<div class="col-md-6"><label for="phonum" class="form-label">手機號碼 <b>*</b></label><input type="tel" id="phonum" name="phonum" class="form-control" placeholder="09xxxxxxxx" inputmode="numeric" autocomplete="tel" required><div class="valid-feedback">手機格式符合規定。</div><div class="invalid-feedback">請輸入有效的臺灣手機號碼。</div></div>
+<div class="col-12"><label for="city" class="form-label">居住縣市 <b>*</b></label><select id="city" name="city" class="form-select" required><option value="" selected disabled>縣市資料載入中……</option></select><small class="hint" id="city_status" role="status">正在讀取縣市資料。</small><div class="valid-feedback">已選擇居住縣市。</div><div class="invalid-feedback">請選擇居住縣市。</div></div>
+</div></section>
+<section class="form-block"><div class="block-title"><span>02</span><h3>學習興趣</h3><small>至少選一項</small></div>
+<fieldset class="choice-fieldset"><legend>感興趣的課程 <b>*</b></legend><div class="choice-grid">
+<label class="choice-card" for="chk01"><input type="checkbox" id="chk01" name="interest" value="HTML/CSS"><span class="checkmark"></span><span><b>HTML / CSS</b><small>網頁結構與版面</small></span></label>
+<label class="choice-card" for="chk02"><input type="checkbox" id="chk02" name="interest" value="JavaScript"><span class="checkmark"></span><span><b>JavaScript</b><small>互動與程式邏輯</small></span></label>
+<label class="choice-card" for="chk03"><input type="checkbox" id="chk03" name="interest" value="Python"><span class="checkmark"></span><span><b>Python</b><small>程式基礎概念</small></span></label>
+<label class="choice-card" for="chk04"><input type="checkbox" id="chk04" name="interest" value="AI協作開發"><span class="checkmark"></span><span><b>AI 協作開發</b><small>用 AI 輔助學習</small></span></label></div><div id="interest_msg" class="hint" aria-live="polite">請至少選擇一項課程。</div></fieldset>
+<fieldset class="choice-fieldset mt-4"><legend>希望上課的時間</legend><p class="hint">可複選；此欄位為偏好調查。</p><div class="weekday-list">
+<label for="week01"><input type="checkbox" id="week01" name="weeken" value="星期一">一</label><label for="week02"><input type="checkbox" id="week02" name="weeken" value="星期二">二</label><label for="week03"><input type="checkbox" id="week03" name="weeken" value="星期三">三</label><label for="week04"><input type="checkbox" id="week04" name="weeken" value="星期四">四</label><label for="week05"><input type="checkbox" id="week05" name="weeken" value="星期五">五</label><label for="week06"><input type="checkbox" id="week06" name="weeken" value="星期六">六</label><label for="week07"><input type="checkbox" id="week07" name="weeken" value="星期日">日</label></div><div id="week_msg" class="hint" aria-live="polite">尚未選擇上課時間。</div></fieldset></section>
+<section class="form-block"><div class="block-title"><span>03</span><h3>學習偏好</h3></div><fieldset class="choice-fieldset"><legend>偏好的上課方式 <b>*</b></legend><div class="radio-stack">
+<label for="rad01"><input type="radio" id="rad01" name="classMode" value="實體課程"><span><b>實體課程</b><small>在教室與講師面對面互動</small></span></label>
+<label for="rad02"><input type="radio" id="rad02" name="classMode" value="線上課程"><span><b>線上課程</b><small>透過網路參與學習</small></span></label>
+<label for="rad03"><input type="radio" id="rad03" name="classMode" value="混合課程"><span><b>混合課程</b><small>依學習安排搭配不同形式</small></span></label></div><div id="classMode_msg" class="hint" aria-live="polite">請選擇一種上課方式。</div></fieldset>
+<div class="preference-row"><div><label for="switch01" class="form-label">接收課程資訊</label><p class="hint">是否希望收到新課程或學習內容通知？</p></div><div class="form-check form-switch custom-switch"><input class="form-check-input" type="checkbox" role="switch" id="switch01"><label class="form-check-label" for="switch01"><span id="switch_msg">目前關閉</span></label></div></div>
+<div class="range-panel"><div class="range-heading"><label for="range01" class="form-label">目前的程式能力自評</label><strong><span id="range_value">5</span><small> / 10</small></strong></div><input type="range" class="form-range" min="1" max="10" step="1" value="5" id="range01"><div class="range-labels"><span>剛開始接觸</span><span>已能獨立練習</span></div></div></section>
+<div class="form-actions"><button type="submit" class="button-main" id="ok_btn">檢查資料並預覽 ↗</button><button type="button" class="button-reset" id="remo_btn">重新填寫</button><p>按下預覽不會將資料傳送到伺服器。</p></div>
+</form></div>
+<aside class="registration-aside"><div class="aside-sticky"><p class="aside-eyebrow">● YOUR LEARNING BRIEF</p><h3>完成這份表單，<br>先整理你的學習方向。</h3><p class="aside-intro">這份表單會在目前瀏覽器暫存部分草稿，方便重新整理後繼續填寫。</p><div class="aside-rule"></div>
+<div class="aside-step"><span>01</span><p><b>填寫基本資料</b><small>姓名、Email、手機與縣市</small></p></div><div class="aside-step"><span>02</span><p><b>選擇學習主題</b><small>勾選感興趣的課程</small></p></div><div class="aside-step"><span>03</span><p><b>確認學習偏好</b><small>選擇上課方式與能力自評</small></p></div>
+<div class="aside-note"><b>i</b><p><strong>隱私提醒</strong><br>此為教學展示。密碼不會寫入 LocalStorage；其他草稿只儲存在目前瀏覽器。</p></div><small class="aside-foot">SHIFT / LEARNING LAB <span>© DEMO</span></small></div></aside>
+</div></section>
+<section class="confirmation" id="confirmation" hidden><div class="confirm-inner"><div class="confirm-heading"><div><p class="eyebrow">05 / REVIEW YOUR DETAILS</p><h2>資料預覽 <span>/ Review</span></h2></div><small class="preview-badge">● 前端模擬</small></div><p class="hint">以下內容僅供本頁確認，尚未提交至任何後端服務。</p><div id="showmsg" class="summary-grid" aria-live="polite"></div><div class="confirm-actions"><button type="button" class="button-main" id="confirm_demo_btn">模擬報名成功 ↗</button><button type="button" class="button-reset" id="edit_btn">返回修改</button></div></div></section>
+</main>
+<footer class="footer"><div class="footer-main"><a class="brand" href="#top"><span class="brand-symbol">S<span>/</span></span><span>SHIFT<small>LEARNING LAB</small></span></a><p>把每一次練習，變成下一次進步的起點。</p><a href="#top">BACK TO TOP ↑</a></div><div class="footer-bottom"><span>教學模擬網站｜非官方授權網站，未使用官方 Logo。</span><span>DESIGNED FOR LEARNING · 2026</span></div></footer>
+<script src="js/bootstrap.bundle.min.js"></script><script src="js/jquery-4.0.0.js"></script>
+<script>
+let flag_username=false, flag_email=false, flag_password=false, flag_phonum=false, flag_city=false, flag_interest=false, flag_weeken=false, flag_classMode=false;
+let interest=[], weeken=[], classMode="", score=5, switchStatus=false;
+const DRAFT_KEY="shiftCourseRegistrationDraft";
+
+$(function(){
+    function saveDraft(){
+        const draft={
+            username:$("#username").val(), email:$("#email").val(), phonum:$("#phonum").val(),
+            city:$("#city").val()||"",
+            interest:$("input[name='interest']:checked").map(function(){return $(this).val();}).get(),
+            weeken:$("input[name='weeken']:checked").map(function(){return $(this).val();}).get(),
+            classMode:$("input[name='classMode']:checked").val()||"",
+            switchStatus:$("#switch01").prop("checked")?"true":"false", score:$("#range01").val()
+        };
+        // 密碼刻意不存入草稿。
+        localStorage.setItem(DRAFT_KEY,JSON.stringify(draft));
+    }
+    function fieldState($field,valid){$field.toggleClass("is-valid",valid).toggleClass("is-invalid",!valid);}
+    function validateUsername(){const v=$("#username").val().trim();flag_username=v.length>=2&&v.length<=8;fieldState($("#username"),flag_username);return flag_username;}
+    function validateEmail(){const v=$("#email").val().trim();flag_email=v.length>=8&&v.length<=15&&/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(v);fieldState($("#email"),flag_email);return flag_email;}
+    function validatePassword(){const v=$("#password").val();flag_password=v.length>=8&&v.length<=16&&/[A-Z]/.test(v)&&/[a-z]/.test(v)&&/[^a-zA-Z0-9]/.test(v);fieldState($("#password"),flag_password);return flag_password;}
+    function validatePhone(){flag_phonum=/^09\d{8}$/.test($("#phonum").val().trim());fieldState($("#phonum"),flag_phonum);return flag_phonum;}
+    function validateCity(){flag_city=Boolean($("#city").val());fieldState($("#city"),flag_city);return flag_city;}
+    function validateInterest(){
+        interest=[];$("input[name='interest']:checked").each(function(){interest.push($(this).val());});
+        flag_interest=interest.length>0;$("#interest_msg").toggleClass("field-error",!flag_interest).toggleClass("field-success",flag_interest).text(flag_interest?"已選擇 "+interest.length+" 項課程。":"請至少選擇一項課程。");return flag_interest;
+    }
+    function updateWeeken(){
+        weeken=[];$("input[name='weeken']:checked").each(function(){weeken.push($(this).val());});
+        flag_weeken=weeken.length>0;$("#week_msg").text(flag_weeken?"已選擇 "+weeken.length+" 個上課時間。":"尚未選擇上課時間。");
+    }
+    function validateClassMode(){
+        classMode=$("input[name='classMode']:checked").val()||"";flag_classMode=Boolean(classMode);
+        $("#classMode_msg").toggleClass("field-error",!flag_classMode).toggleClass("field-success",flag_classMode).text(flag_classMode?"已選擇："+classMode:"請選擇一種上課方式。");return flag_classMode;
+    }
+    function updateSwitch(){switchStatus=$("#switch01").prop("checked");$("#switch_msg").text(switchStatus?"目前開啟":"目前關閉").toggleClass("field-success",switchStatus);}
+    function updateRange(){score=Number($("#range01").val());$("#range_value").text(score);}
+
+    $("#username").on("input",function(){validateUsername();saveDraft();});
+    $("#email").on("input",saveDraft);
+    $("#email").on("change",function(){validateEmail();saveDraft();});
+    $("#password").on("input",validatePassword);
+    $("#phonum").on("input",function(){validatePhone();saveDraft();});
+
+    $("input[name='interest']").on("change",function(){validateInterest();saveDraft();});
+    $("input[name='weeken']").on("change",function(){updateWeeken();saveDraft();});
+    $("input[name='classMode']").on("change",function(){validateClassMode();saveDraft();});
+    $("#switch01").on("change",function(){updateSwitch();saveDraft();});
+    $("#range01").on("input",function(){updateRange();saveDraft();});
+
+    function restoreDraft(){
+        const raw=localStorage.getItem(DRAFT_KEY);if(!raw)return;
+        let d;try{d=JSON.parse(raw);}catch(e){localStorage.removeItem(DRAFT_KEY);return;}
+        $("#username").val(d.username||"");$("#email").val(d.email||"");$("#phonum").val(d.phonum||"");
+        // AJAX 已建立縣市選項後，才還原縣市。
+        if(d.city&&$("#city option").filter(function(){return $(this).val()===d.city;}).length){$("#city").val(d.city);}
+        const savedInterest=Array.isArray(d.interest)?d.interest:[];
+        $("input[name='interest']").each(function(){$(this).prop("checked",savedInterest.includes($(this).val()));});
+        const savedWeeks=Array.isArray(d.weeken)?d.weeken:[];
+        $("input[name='weeken']").each(function(){$(this).prop("checked",savedWeeks.includes($(this).val()));});
+        if(d.classMode){$("input[name='classMode']").filter(function(){return $(this).val()===d.classMode;}).prop("checked",true);}
+        $("#switch01").prop("checked",d.switchStatus==="true");$("#range01").val(d.score||5);
+        if($("#username").val())validateUsername();if($("#email").val())validateEmail();if($("#phonum").val())validatePhone();if($("#city").val())validateCity();
+        validateInterest();updateWeeken();validateClassMode();updateSwitch();updateRange();
+    }
+
+    $.ajax({
+        type:"GET",url:"js/json/CityCountyData.json",dataType:"json",
+        success:function(data){
+            $("#city").empty().append(new Option("請選擇縣市名稱",""));
+            data.forEach(function(item,index){if(item.CityName){$("#city").append(new Option((index+1)+"："+item.CityName,item.CityName));}});
+            $("#city_status").text("縣市資料載入完成。");
+            $("#city").on("change",function(){validateCity();saveDraft();});
+            restoreDraft();
+        },
+        error:function(){
+            $("#city").empty().append(new Option("縣市資料載入失敗，請檢查 JSON 路徑",""));
+            $("#city_status").text("無法讀取 js/json/CityCountyData.json，請確認檔案路徑及格式。");
+            Swal.fire({icon:"error",title:"縣市資料載入失敗",text:"請確認 JSON 路徑正確，並透過本機伺服器開啟頁面。"});
+        }
+    });
+
+    function clearDraft(){localStorage.removeItem(DRAFT_KEY);}
+    function resetForm(){
+        $("#registrationForm")[0].reset();
+        $("#registrationForm .is-valid,#registrationForm .is-invalid").removeClass("is-valid is-invalid");
+        $("#showmsg").empty();$("#confirmation").prop("hidden",true);
+        flag_username=flag_email=flag_password=flag_phonum=flag_city=flag_interest=flag_weeken=flag_classMode=false;
+        interest=[];weeken=[];classMode="";score=5;switchStatus=false;
+        $("#interest_msg").removeClass("field-error field-success").text("請至少選擇一項課程。");
+        $("#week_msg").text("尚未選擇上課時間。");
+        $("#classMode_msg").removeClass("field-error field-success").text("請選擇一種上課方式。");
+        $("#switch_msg").removeClass("field-success").text("目前關閉");$("#range_value").text("5");
+        $("#city").val("");clearDraft();
+    }
+    function addSummaryItem(label,value,extraClass){
+        const card=document.createElement("article");card.className="summary-item"+(extraClass?" "+extraClass:"");
+        const title=document.createElement("span");title.className="summary-label";title.textContent=label;
+        const content=document.createElement("p");content.className="summary-value";content.textContent=value||"未填寫";
+        card.append(title,content);$("#showmsg").append(card);
+    }
+    function renderSummary(){
+        $("#showmsg").empty();
+        addSummaryItem("姓名",$("#username").val().trim());
+        addSummaryItem("Email",$("#email").val().trim());
+        addSummaryItem("密碼","●●●●●●●●（已遮罩）","summary-sensitive");
+        addSummaryItem("手機號碼",$("#phonum").val().trim());
+        addSummaryItem("居住縣市",$("#city").val());
+        addSummaryItem("感興趣的課程",$("input[name='interest']:checked").map(function(){return $(this).val();}).get().join("、"));
+        addSummaryItem("偏好的上課時間",$("input[name='weeken']:checked").map(function(){return $(this).val();}).get().join("、")||"尚未選擇");
+        addSummaryItem("偏好的上課方式",$("input[name='classMode']:checked").val());
+        addSummaryItem("接收課程資訊",$("#switch01").prop("checked")?"開啟":"關閉");
+        addSummaryItem("程式能力自評",score+" / 10 分");
+        $("#confirmation").prop("hidden",false);
+        document.querySelector("#confirmation").scrollIntoView({behavior:"smooth",block:"start"});
+    }
+
+    $("#registrationForm").on("submit",function(e){
+        e.preventDefault();validateUsername();validateEmail();validatePassword();validatePhone();validateCity();validateInterest();validateClassMode();
+        const valid=flag_username&&flag_email&&flag_password&&flag_phonum&&flag_city&&flag_interest&&flag_classMode;
+        if(!valid){
+            Swal.fire({icon:"error",title:"還有資料需要修正",text:"請檢查標示錯誤的欄位；已填寫內容會保留。",confirmButtonText:"返回檢查"});
+            const first=$("#registrationForm .is-invalid").first();if(first.length){first[0].scrollIntoView({behavior:"smooth",block:"center"});first.trigger("focus");}return;
+        }
+        renderSummary();Swal.fire({icon:"success",title:"資料檢查通過",text:"已產生報名資料預覽。這仍是前端模擬，尚未送至後端。",confirmButtonText:"查看預覽"});
+    });
+    $("#confirm_demo_btn").on("click",function(){
+        Swal.fire({icon:"success",title:"模擬報名完成",text:"本次僅模擬前端流程，沒有寫入資料庫。",confirmButtonText:"完成"}).then(function(r){
+            if(r.isConfirmed){clearDraft();resetForm();window.scrollTo({top:0,behavior:"smooth"});}
+        });
+    });
+    $("#edit_btn").on("click",function(){document.querySelector("#registration").scrollIntoView({behavior:"smooth",block:"start"});});
+    $("#remo_btn").on("click",function(){
+        Swal.fire({icon:"warning",title:"要清除目前填寫內容嗎？",text:"這會清除本表單的草稿暫存。",showCancelButton:true,confirmButtonText:"清除並重新填寫",cancelButtonText:"繼續填寫"}).then(function(r){
+            if(r.isConfirmed){resetForm();Swal.fire({icon:"success",title:"表單已重設",timer:1200,showConfirmButton:false});}
+        });
+    });
+    updateSwitch();updateRange();
+});
+</script>
+</body>
+</html>
