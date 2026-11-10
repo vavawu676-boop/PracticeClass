@@ -1,0 +1,320 @@
+/* ==================================================
+   Learning Log｜學習歷程筆記展示
+   外部樣式表：learning-log.css
+   本檔案由原 HTML 的 <style> 區塊獨立整理
+================================================== */
+
+/* 01. 全站色彩、字體與尺寸變數 */
+:root {
+    color-scheme: light dark;
+
+    /* 主題色彩 */
+    --site-primary: #2563eb;
+    --site-secondary: #101d32;
+    --site-background: #0b1220;
+    --site-on-primary: #ffffff;
+    --site-on-secondary: #e8f0ff;
+    --site-on-background: #edf3ff;
+
+    /* 字體設定 */
+    --site-font-body: Inter, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    --site-font-heading: Inter, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+
+    /* 版面比例 */
+    --site-heading-scale: 1;
+    --site-spacing-scale: 1;
+    --site-radius-scale: 1;
+    --site-decoration-opacity: 1;
+
+    /* 明暗模式表面與輔助文字 */
+    --surface: light-dark(#ffffff, #111c2e);
+    --surface-soft: light-dark(#f4f7fc, #142238);
+    --text-muted: light-dark(#64748b, #a4b4cc);
+    --line: light-dark(#dce5f1, #273852);
+}
+
+/* 02. 全站基本設定 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--site-font-body);
+    background: var(--site-background);
+    color: var(--site-on-background);
+    min-height: 100vh;
+}
+
+/* 03. 主應用程式容器 */
+.app-root {
+    min-height: 100vh;
+    width: 100%;
+    border-radius: 0;
+    overflow: hidden;
+    background: var(--site-background);
+    position: relative;
+    isolation: isolate;
+}
+
+/* 04. 右上角背景光暈 */
+.glow {
+    position: absolute;
+    width: 440px;
+    height: 440px;
+    top: -220px;
+    right: -100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 99, 235, .25), transparent 68%);
+    opacity: var(--site-decoration-opacity);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* 05. 頁面內容寬度與上下間距 */
+.page {
+    width: min(100% - 40px, 1040px);
+    margin: 0 auto;
+    padding: calc(52px * var(--site-spacing-scale)) 0 calc(44px * var(--site-spacing-scale));
+}
+
+/* 06. 頂部品牌列 */
+.topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 58px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    letter-spacing: .04em;
+}
+
+.brand-mark {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: calc(11px * var(--site-radius-scale));
+    color: var(--site-on-primary);
+    background: var(--site-primary);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, .28);
+}
+
+.top-label {
+    color: var(--text-muted);
+    font-size: 13px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+/* 07. 首頁主視覺區 */
+.hero {
+    max-width: 760px;
+    margin-bottom: 38px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #8bb7ff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.eyebrow::before {
+    content: "";
+    width: 24px;
+    height: 2px;
+    background: var(--site-primary);
+}
+
+h1 {
+    font-family: var(--site-font-heading);
+    font-size: calc(clamp(34px, 5vw, 58px) * var(--site-heading-scale));
+    line-height: 1.16;
+    letter-spacing: -.045em;
+    margin: 0 0 18px;
+}
+
+h1 span {
+    color: #79aaff;
+}
+
+.intro {
+    max-width: 590px;
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* 08. 作品集標題列 */
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 16px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: .02em;
+}
+
+.count {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* 09. 作品卡片網格 */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: calc(16px * var(--site-spacing-scale));
+}
+
+/* 10. 單張作品卡片 */
+.project-card {
+    min-height: 148px;
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    padding: calc(22px * var(--site-spacing-scale));
+    background: var(--surface);
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid var(--line);
+    border-radius: calc(16px * var(--site-radius-scale));
+    transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+    transform: translateY(-3px);
+    border-color: var(--site-primary);
+    background: var(--surface-soft);
+    outline: none;
+}
+
+.project-card:focus-visible {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .28);
+}
+
+/* 11. 作品圖示 */
+.project-icon {
+    flex: 0 0 46px;
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: calc(13px * var(--site-radius-scale));
+    background: rgba(37, 99, 235, .13);
+    color: #8bb7ff;
+}
+
+.project-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* 12. 作品卡片文字 */
+.card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-number {
+    color: var(--text-muted);
+    font-size: 11px;
+    letter-spacing: .12em;
+    margin-bottom: 9px;
+}
+
+.card-title {
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 700;
+    margin: 0 0 7px;
+}
+
+.card-meta {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.arrow {
+    color: var(--text-muted);
+    font-size: 20px;
+    line-height: 1;
+    margin-left: auto;
+    padding-top: 3px;
+}
+
+/* 13. 頁尾 */
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    border-top: 1px solid var(--line);
+    margin-top: 42px;
+    padding-top: 20px;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+/* 14. 手機與窄螢幕版面 */
+@media (max-width: 640px) {
+    .page {
+        width: min(100% - 28px, 1040px);
+        padding-top: 28px;
+    }
+
+    .topline {
+        margin-bottom: 42px;
+    }
+
+    .top-label {
+        display: none;
+    }
+
+    .hero {
+        margin-bottom: 30px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        min-height: 125px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
+
+/* 15. 尊重使用者的減少動態效果設定 */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

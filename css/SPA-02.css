@@ -1,0 +1,1900 @@
+/* ==================================================
+   Portfolio.css
+   個人作品集 SPA
+   深色木質 × 金工鍛造色彩系統
+
+   CSS 結構：
+   01. 字體載入
+   02. 全站色彩變數
+   03. 全站基本設定
+   04. S01（無專屬樣式）
+   05. S02 導覽列
+   06. S03 皮革工藝輪播區
+   07. S04 個人介紹與量化數據
+   08. S05 我的工作信念
+   09. S06 關於我
+   10. S07 精選作品集
+   11. S08 學經歷介紹
+   12. S09 技能與工具
+   13. S10 學習歷程 Timeline
+   14. S11 專案實作流程
+   15. S12 問題解決與學習反思
+   16. S13 未來願景 × 職涯發展
+   17. S14 聯絡我們
+   18. S15 Footer
+   19. 全站共用元件
+================================================== */
+
+
+/* ==================================================
+   01. Google Fonts 字體載入
+================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&family=Zen+Old+Mincho&display=swap');
+
+
+/* ==================================================
+   02. 全站色彩變數
+================================================== */
+
+:root {
+    /* 木質色系 Wood */
+    --wood-dark: #241914;
+    --wood-main: #33231b;
+
+    /* 紅色系 Red */
+
+    /* 金工／鍛造鐵色系 Iron */
+    --iron-dark: #171717;
+    --iron-main: #242424;
+    --iron-light: #343434;
+
+    /* 銅色系 Copper */
+    --copper-main: #b06a3c;
+
+    /* 金色系 Gold */
+    --gold-dark: #8a672d;
+    --gold-main: #c9a45c;
+    --gold-light: #e2c47a;
+
+    /* 黃銅色系 Brass */
+    --brass-dark: #6F5638;
+
+    /* 紙張色系 Paper */
+    --paper-main: #E3D6BD;
+
+    /* 文字色系 Text */
+    --text-main: #f3ead5;
+    --text-sub: #b9aa92;
+
+    /* 邊框與裝飾 Border */
+    --border-gold: rgba(201, 164, 92, 0.45);
+
+    /* S13 配色對應 */
+}
+
+
+/* ==================================================
+   03. 全站基本設定
+================================================== */
+
+/* 全站內文使用圓體 */
+body {
+    font-family: "Zen Maru Gothic", sans-serif;
+}
+
+/* 標題使用明體 */
+h1,
+h2,
+h3,
+.mytitle-03 {
+    font-family: "Zen Old Mincho", serif;
+}
+
+/* 圖片自動適應容器 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 共用背景圖片設定 */
+.bg-img {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* ==================================================
+   04. S01
+   無專屬樣式
+================================================== */
+
+
+/* ==================================================
+   05. S02 固定導覽列與捲動透明效果
+================================================== */
+
+/* 導覽列固定在頁面最上方 */
+#S02.navbar-fixed {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+
+    background-color: #212529 !important;
+
+    transition:
+        background-color 0.3s ease,
+        backdrop-filter 0.3s ease;
+}
+
+/* 頁面往下滑動：背景變成 50% 透明 */
+#S02.navbar-fixed.is-scrolled {
+    background-color: rgba(33, 37, 41, 0.5) !important;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* 錨點跳轉時預留導覽列空間 */
+html {
+    scroll-padding-top: 90px;
+}
+
+/* Navbar 下拉選單背景 */
+#S02 .dropdown-menu {
+    --bs-dropdown-bg: var(--iron-main);
+    --bs-dropdown-link-color: var(--text-main);
+    --bs-dropdown-link-hover-bg: var(--gold-main);
+    --bs-dropdown-link-hover-color: var(--iron-dark);
+}
+
+
+/* ==================================================
+   06. S03 皮革工藝輪播區
+================================================== */
+
+/* 輪播外層 */
+#S03 {
+    background-color: var(--iron-dark);
+}
+
+/* 輪播圖片 */
+#S03 .carousel-item {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* 輪播文字區塊 */
+#S03 .craft-caption {
+    left: 50%;
+    right: auto;
+    bottom: 45px;
+    width: min(90%, 520px);
+    transform: translateX(-50%);
+    padding: 25px 30px;
+    background-color: rgba(36, 25, 20, 0.82);
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    color: var(--text-main);
+    text-align: center;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* 英文標籤 */
+#S03 .craft-label {
+    display: block;
+    color: var(--copper-main);
+    margin-bottom: 10px;
+}
+
+/* 中文標題 */
+#S03 .craft-caption h3 {
+    color: var(--gold-light);
+    margin-bottom: 12px;
+}
+
+/* 文字介紹 */
+#S03 .craft-intro {
+    color: var(--paper-main);
+    margin-bottom: 15px;
+}
+
+/* 技術清單 */
+#S03 .craft-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 技術清單項目 */
+#S03 .craft-list li {
+    color: var(--text-main);
+    line-height: 1.9;
+}
+
+/* 輪播指示器 */
+#S03 .carousel-indicators {
+    margin-bottom: 18px;
+}
+
+#S03 .carousel-indicators button {
+    background-color: var(--gold-light);
+}
+
+/* 左右切換按鈕 */
+#S03 .carousel-control-prev,
+#S03 .carousel-control-next {
+    width: 8%;
+}
+
+/* S03 RWD */
+@media (max-width: 767.98px) {
+
+    #S03 .craft-caption {
+        bottom: 40px;
+        width: 88%;
+        padding: 20px 18px;
+    }
+
+    #S03 .craft-intro {
+        margin-bottom: 10px;
+    }
+
+    #S03 .craft-list li {
+        line-height: 1.7;
+    }
+
+    #S03 .carousel-control-prev,
+    #S03 .carousel-control-next {
+        width: 6%;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    #S03 .craft-caption {
+        bottom: 35px;
+        width: 90%;
+        padding: 15px 12px;
+    }
+
+    #S03 .craft-label {
+        margin-bottom: 6px;
+    }
+
+    #S03 .craft-intro {
+        margin-bottom: 8px;
+    }
+
+    #S03 .craft-list li {
+        line-height: 1.6;
+    }
+
+    #S03 .carousel-indicators {
+        margin-bottom: 10px;
+    }
+}
+
+
+/* ==================================================
+   07. S04 個人介紹與量化數據
+================================================== */
+
+/* 區段基本設定 */
+#S04 {
+    background-color: var(--iron-dark);
+}
+
+/* 左右欄位高度 */
+#S04 .row {
+    align-items: stretch;
+}
+
+/* 左側圖片 */
+#S04 .col-md-5.bg-img {
+    min-height: 700px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* 右側介紹區 */
+#S04 .col-md-7 {
+    background-color: var(--wood-dark) !important;
+    color: var(--text-main) !important;
+    padding: 55px 45px !important;
+}
+
+/* 英文標籤 */
+#S04 .about-label {
+    display: inline-block;
+    color: var(--copper-main) !important;
+}
+
+/* 主標題 */
+#S04 h2 {
+    color: var(--gold-light) !important;
+}
+
+/* 主標題下方介紹 */
+#S04>.container-fluid>.row>.col-md-7>p {
+    color: var(--text-sub) !important;
+}
+
+/* 四組學習歷程 */
+#S04 .text-start {
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-gold);
+}
+
+/* 學習歷程小標題 */
+#S04 .text-start h4 {
+    color: var(--gold-light);
+}
+
+/* 學習歷程說明 */
+#S04 .text-start p {
+    color: var(--text-sub) !important;
+    line-height: 1.9;
+    margin-bottom: 0;
+}
+
+/* 統計區上方分隔線 */
+#S04 .row.text-center.mt-4 {
+    border-top: 1px solid var(--border-gold) !important;
+    margin-top: 30px !important;
+}
+
+/* 統計卡片 */
+#S04 .stat-card {
+    height: 100%;
+    background-color: var(--iron-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 10px;
+    padding: 20px 12px !important;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* 統計卡片 Hover */
+#S04 .stat-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold-main);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* 統計圖示 */
+#S04 .stat-icon {
+    color: var(--copper-main);
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+/* 統計數值 */
+#S04 .stat-value {
+    color: var(--gold-light);
+    margin-bottom: 5px;
+}
+
+/* 數字 */
+#S04 .stat-number {
+    color: var(--gold-main);
+}
+
+/* 數值單位 */
+#S04 .stat-unit {
+    color: var(--text-sub);
+}
+
+/* 統計標題 */
+#S04 .stat-card h5 {
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+/* 英文說明 */
+#S04 .stat-en {
+    color: var(--text-sub);
+    margin-bottom: 0;
+}
+
+/* S04 RWD */
+@media (max-width: 767.98px) {
+
+    #S04 .col-md-5.bg-img {
+        min-height: 380px;
+    }
+
+    #S04 .col-md-7 {
+        padding: 35px 25px !important;
+    }
+
+    #S04 .text-start {
+        margin-bottom: 25px !important;
+    }
+
+    #S04 .stat-card {
+        padding: 18px 10px !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    #S04 .col-md-5.bg-img {
+        min-height: 280px;
+    }
+
+    #S04 .col-md-7 {
+        padding: 30px 18px !important;
+    }
+
+    #S04 .stat-icon {
+        font-size: 22px;
+    }
+}
+
+
+/* ==================================================
+   08. S05 我的工作信念
+================================================== */
+
+/* 區段背景 */
+#S05.belief-section {
+    background-color: var(--iron-dark);
+    padding: 65px 0;
+}
+
+/* 區塊標題 */
+#S05 .belief-heading h2 {
+    color: var(--gold-light);
+    margin-bottom: 20px;
+}
+
+/* 標題裝飾線 */
+#S05 .belief-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: var(--gold-main);
+}
+
+/* 裝飾線 */
+#S05 .belief-divider span {
+    display: block;
+    width: 55px;
+    height: 1px;
+    background-color: var(--border-gold);
+}
+
+/* 寶石圖示 */
+#S05 .belief-divider i {
+    font-size: 18px;
+    color: var(--copper-main);
+}
+
+/* 信念卡片 */
+#S05 .belief-card {
+    height: 100%;
+    padding: 30px 25px;
+    background-color: var(--wood-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* 卡片 Hover */
+#S05 .belief-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-main);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+}
+
+/* 卡片圖示 */
+#S05 .belief-icon {
+    color: var(--copper-main);
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* 卡片標題 */
+#S05 .belief-card h3 {
+    color: var(--gold-light);
+    margin-bottom: 18px;
+}
+
+/* 卡片內部分隔線 */
+#S05 .belief-card-divider {
+    width: 45px;
+    height: 2px;
+    background-color: var(--gold-main);
+    margin-bottom: 20px;
+}
+
+/* 卡片說明文字 */
+#S05 .belief-card p {
+    color: var(--text-main);
+    line-height: 1.9;
+    margin-bottom: 0;
+}
+
+/* 底部信念文字 */
+#S05 .s05-footer {
+    color: var(--text-sub);
+    line-height: 2;
+}
+
+/* 引號圖示 */
+#S05 .s05-footer i {
+    color: var(--gold-main);
+    margin-right: 10px;
+}
+
+/* 引言文字 */
+#S05 .s05-footer span {
+    color: var(--gold-light);
+}
+
+/* S05 RWD */
+@media (max-width: 767.98px) {
+
+    #S05.belief-section {
+        padding: 40px 0;
+    }
+
+    #S05 .belief-card {
+        padding: 25px 20px;
+    }
+
+    #S05 .belief-icon {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    #S05 .s05-footer {
+        padding: 0 10px;
+    }
+}
+
+
+/* ==================================================
+   09. S06 關於我
+================================================== */
+
+/* 區段基本設定 */
+#S06 {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--wood-dark);
+    padding: 45px 0;
+}
+
+/* 左側圖片外層 */
+#S06>.row {
+    margin: 0;
+}
+
+/* 左側圖片區域 */
+#S06 .bg-img {
+    position: absolute;
+    top: 45px;
+    bottom: 45px;
+    left: 30px;
+
+    border: 3px solid var(--border-gold);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+/* 右側內容區 */
+#S06 .about-content {
+    position: relative;
+    z-index: 1;
+    left: 45px;
+    background-color: var(--iron-main);
+    border: 3px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 40px 35px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 標題區域 */
+#S06 .about-heading {
+    margin-bottom: 25px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border-gold);
+}
+
+/* 中文標題 */
+#S06 .about-title h2 {
+    color: var(--gold-light);
+    margin-bottom: 8px;
+}
+
+/* 英文副標題 */
+#S06 .about-en {
+    display: inline-block;
+    color: var(--copper-main);
+}
+
+/* 自我介紹文字 */
+#S06 .about-text {
+    color: var(--text-main);
+    line-height: 1.9;
+}
+
+/* 段落 */
+#S06 .about-text p {
+    margin-bottom: 18px;
+}
+
+/* 最後一段 */
+#S06 .about-text p:last-child {
+    margin-bottom: 25px;
+}
+
+/* 技術標籤 */
+#S06 .about-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+/* 個別技術標籤 */
+#S06 .about-skills span {
+    display: inline-block;
+    color: var(--gold-light);
+    background-color: var(--wood-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 20px;
+    padding: 7px 15px;
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* 技術標籤 Hover */
+#S06 .about-skills span:hover {
+    color: var(--iron-dark);
+    background-color: var(--gold-main);
+    border-color: var(--gold-main);
+}
+
+/* 學習歷程按鈕 */
+#S06 .about-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--copper-main);
+    text-decoration: none;
+    border-bottom: 1px solid var(--copper-main);
+    padding: 8px 0;
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        gap 0.3s ease;
+}
+
+/* 按鈕 Hover */
+#S06 .about-btn:hover {
+    color: var(--gold-light);
+    border-color: var(--gold-light);
+    gap: 16px;
+}
+
+/* 鍵盤焦點 */
+#S06 .about-btn:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 5px;
+}
+
+/* S06 RWD */
+@media (max-width: 991.98px) {
+
+    #S06 .about-content {
+        padding: 30px 25px;
+    }
+}
+
+@media (max-width: 767.98px) {
+
+    #S06 {
+        padding: 25px 0;
+    }
+
+    #S06 .about-content {
+        padding: 28px 22px;
+        border-radius: 10px;
+    }
+
+    #S06 .about-heading {
+        margin-bottom: 20px;
+    }
+
+    #S06 .about-text {
+        line-height: 1.8;
+    }
+
+    #S06 .about-text p {
+        margin-bottom: 15px;
+    }
+
+    #S06 .about-skills {
+        gap: 8px;
+        margin: 20px 0;
+    }
+
+    #S06 .about-skills span {
+        padding: 6px 12px;
+    }
+}
+
+
+/* ==================================================
+   10. S07 精選作品集
+================================================== */
+
+/* 區段背景 */
+#S07 {
+    background-color: var(--wood-dark);
+    padding: 45px 0;
+}
+
+/* 區塊標題 */
+#S07 .section-title {
+    color: var(--gold-light);
+    font-weight: 700;
+}
+
+/* 區塊介紹 */
+#S07 .section-desc {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-sub);
+    line-height: 1.9;
+}
+
+/* 作品卡片 */
+#S07 .portfolio-item {
+    background-color: var(--iron-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 28px 22px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* 作品卡片 Hover */
+#S07 .portfolio-item:hover {
+    transform: translateY(-7px);
+    border-color: var(--gold-main);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+}
+
+/* 作品圖示 */
+#S07 .portfolio-icon {
+    flex-shrink: 0;
+    color: var(--copper-main);
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* 圖示 Hover */
+#S07 .portfolio-item:hover .portfolio-icon {
+    color: var(--gold-main);
+    transform: scale(1.05);
+}
+
+/* 作品名稱 */
+#S07 .portfolio-title {
+    color: var(--gold-light);
+    margin-bottom: 12px;
+}
+
+/* 技術說明 */
+#S07 .portfolio-tech {
+    color: var(--copper-main);
+}
+
+/* 作品介紹 */
+#S07 .portfolio-desc {
+    color: var(--text-main);
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+/* 觀看作品按鈕 */
+#S07 .portfolio-btn {
+    color: var(--gold-main);
+    background-color: transparent;
+    border: 1px solid var(--gold-main);
+    border-radius: 6px;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* 按鈕 Hover */
+#S07 .portfolio-btn:hover {
+    color: var(--iron-dark);
+    background-color: var(--gold-main);
+    border-color: var(--gold-main);
+}
+
+/* 鍵盤焦點 */
+#S07 .portfolio-btn:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 3px;
+}
+
+/* S07 RWD */
+@media (max-width: 991.98px) {
+
+    #S07 .portfolio-item {
+        padding: 24px 18px;
+    }
+
+    #S07 .portfolio-icon {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+
+    #S07 {
+        padding: 30px 0;
+    }
+
+    #S07 .section-desc {
+        padding: 0 12px;
+    }
+
+    #S07 .portfolio-item {
+        padding: 22px 18px;
+    }
+
+    #S07 .portfolio-icon {
+        font-size: 2.8rem;
+        margin-right: 15px !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    #S07 .portfolio-item {
+        align-items: flex-start !important;
+        padding: 20px 15px;
+    }
+
+    #S07 .portfolio-icon {
+        font-size: 2rem;
+        margin-right: 12px !important;
+    }
+
+    #S07 .portfolio-btn {
+        margin-top: 12px !important;
+    }
+}
+
+
+/* ==================================================
+   11. S08 學經歷介紹
+   保留 Bootstrap 原始欄位配置
+================================================== */
+
+/* 區段背景 */
+#S08 {
+    background-color: var(--wood-dark);
+}
+
+/* 左側內容卡片 */
+#S08 .bg-white {
+    background-color: var(--iron-main) !important;
+    border: 1px solid var(--border-gold);
+    border-radius: 12px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* 區塊標題 */
+#S08 .h1 {
+    color: var(--gold-light) !important;
+}
+
+/* 外層經歷列表 */
+#S08 .experience-list {
+    color: var(--text-main);
+    background-color: var(--wood-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* 左側 dt 與右側 dd 共用間距 */
+#S08 .experience-list>dt,
+#S08 .experience-list>dd {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+/* 左側 dt */
+#S08 .experience-list>dt {
+    border-bottom: none;
+    color: var(--gold-light);
+}
+
+/* 右側 dd */
+#S08 .experience-list>dd {
+    position: relative;
+    color: var(--text-sub);
+    border-bottom: 1px solid var(--border-gold);
+    background-image: none;
+}
+
+/* 將右側底線向左延伸，覆蓋左側欄位 */
+#S08 .experience-list>dd::before {
+    content: "";
+    position: absolute;
+    left: -33.333333%;
+    bottom: -1px;
+    width: 33.333333%;
+    border-bottom: 1px solid var(--border-gold);
+}
+
+/* 最後一組「工作未來期望」不顯示底線 */
+#S08 .experience-list>dd:last-child {
+    border-bottom: none;
+}
+
+#S08 .experience-list>dd:last-child::before {
+    display: none;
+}
+
+/* 內層文字顏色 */
+#S08 .experience-list>dd>dl>dt {
+    color: var(--copper-main);
+}
+
+#S08 .experience-list>dd>dl>dd {
+    color: var(--text-sub);
+}
+
+/* S08 RWD */
+@media (max-width: 767.98px) {
+
+    #S08 {
+        padding: 45px 0;
+    }
+
+    #S08 .bg-white {
+        padding: 20px !important;
+    }
+
+    #S08 .h1 {
+        margin-top: 15px !important;
+        margin-bottom: 25px !important;
+    }
+
+    #S08 .experience-list>dt,
+    #S08 .experience-list>dd {
+        padding: 10px;
+    }
+
+    #S08 .experience-list>dt {
+        padding-bottom: 5px;
+    }
+
+    #S08 .experience-list>dd {
+        padding-top: 5px;
+    }
+
+    #S08 .experience-list>dd>dl>dt,
+    #S08 .experience-list>dd>dl>dd {
+        padding: 8px 5px;
+    }
+}
+
+
+/* ==================================================
+   12. S09 技能與工具
+   深木色 × 鍛鐵灰 × 銅金
+================================================== */
+
+/* 區塊背景 */
+#S09.skill-section {
+    background-color: var(--iron-dark);
+}
+
+/* 主標題 */
+#S09 .mytitle-03 {
+    color: var(--gold-light) !important;
+}
+
+/* 英文副標題 */
+#S09 .skill-subtitle,
+#S09 .skill-en {
+    color: var(--copper-main);
+}
+
+/* 區塊介紹文字 */
+#S09 .skill-intro {
+    color: var(--text-sub);
+}
+
+/* 技能卡片 */
+#S09 .skill-card {
+    position: relative;
+    padding: 24px;
+    background-color: var(--wood-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* 卡片 Hover */
+#S09 .skill-card:hover {
+    border-color: var(--gold-light);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+/* 技能圖示 */
+#S09 .skill-icon {
+    position: absolute;
+    top: -2px;
+    color: var(--gold-main);
+    font-size: 3rem;
+}
+
+/* 技能分類標題 */
+#S09 .skill-card h3 {
+    margin-top: 42px;
+    color: var(--gold-light);
+}
+
+/* 技能清單：移除項目符號 */
+#S09 .skill-card ul {
+    color: var(--text-main);
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+/* 技能項目文字 */
+#S09 .skill-card li {
+    color: var(--text-main);
+}
+
+/* 確保不顯示清單標記 */
+#S09 .skill-card li::marker {
+    content: "";
+}
+
+
+/* ==================================================
+   13. S10 學習歷程 Timeline
+   深木色 × 鍛鐵灰 × 銅金
+================================================== */
+
+/* 區塊背景 */
+#S10.timeline-section {
+    background-color: var(--iron-dark);
+    padding: 60px 0;
+}
+
+/* 區塊標題 */
+#S10 .mytitle-03 {
+    color: var(--gold-light);
+}
+
+/* 英文副標題 */
+#S10 .timeline-subtitle {
+    color: var(--copper-main);
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+/* 區塊介紹 */
+#S10 .timeline-intro {
+    color: var(--text-sub);
+    line-height: 1.8;
+}
+
+/* Timeline 外層 */
+#S10 .container {
+    position: relative;
+}
+
+/* 中央時間軸 */
+#S10 .container::before {
+    content: "";
+    position: absolute;
+    top: 150px;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background-color: var(--gold-dark);
+    transform: translateX(-50%);
+}
+
+/* 每一個時間節點 */
+#S10 .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* 時間節點圓點 */
+#S10 .timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--gold-main);
+    border: 4px solid var(--gold-dark);
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+/* 時間軸卡片 */
+#S10 .timeline-card {
+    background-color: var(--wood-main);
+    border: 2px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* 卡片 Hover */
+#S10 .timeline-card:hover {
+    border-color: var(--gold-light);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+    transform: translateY(-5px);
+}
+
+/* 階段編號 */
+#S10 .timeline-number {
+    color: var(--gold-main);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* 階段標題 */
+#S10 .timeline-card h3 {
+    color: var(--gold-light);
+    margin: 12px 0 5px;
+}
+
+/* 英文副標題 */
+#S10 .timeline-en {
+    color: var(--copper-main);
+    margin-bottom: 15px;
+}
+
+/* 卡片說明文字 */
+#S10 .timeline-card p:not(.timeline-en) {
+    color: var(--text-sub);
+    line-height: 1.9;
+}
+
+/* 技術標籤 */
+#S10 .timeline-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+#S10 .timeline-tags span {
+    color: var(--gold-light);
+    background-color: var(--iron-main);
+    border: 1px solid var(--brass-dark);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 13px;
+}
+
+/* 時間軸節點裝飾 */
+#S10 .timeline-item::after {
+    background-color: var(--gold-main);
+}
+
+/* S10 RWD */
+@media (max-width: 767.98px) {
+
+    #S10 .container::before {
+        left: 15px;
+    }
+
+    #S10 .timeline-item::before {
+        left: 15px;
+    }
+
+    #S10 .timeline-content {
+        padding-left: 45px;
+    }
+
+    #S10 .timeline-empty {
+        display: none;
+    }
+
+    #S10 .timeline-card {
+        padding: 20px;
+    }
+}
+
+
+/* ==================================================
+   14. S11 專案實作流程
+   深木色 × 鍛鐵灰 × 銅金
+================================================== */
+
+/* 區塊背景 */
+#S11.project-section {
+    background-color: var(--iron-dark);
+    padding: 60px 0;
+}
+
+/* 區塊標題 */
+#S11 .mytitle-03 {
+    color: var(--gold-light);
+}
+
+/* 英文副標題 */
+#S11 .project-subtitle {
+    color: var(--copper-main);
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+/* 區塊介紹 */
+#S11 .project-intro {
+    color: var(--text-sub);
+    line-height: 1.8;
+}
+
+/* 專案卡片 */
+#S11 .project-card {
+    position: relative;
+    background-color: var(--wood-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* 卡片 Hover */
+#S11 .project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-light);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+/* 階段編號 */
+#S11 .project-number {
+    color: var(--gold-main);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/* ICON */
+#S11 .project-icon {
+    color: var(--copper-main);
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+/* 卡片標題 */
+#S11 .project-card h3 {
+    color: var(--gold-light);
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+/* 英文副標題 */
+#S11 .project-en {
+    color: var(--copper-main);
+    margin-bottom: 15px;
+}
+
+/* 說明文字 */
+#S11 .project-card p:not(.project-en) {
+    color: var(--text-sub);
+    line-height: 1.9;
+    margin-bottom: 0;
+}
+
+/* S11 RWD */
+@media (max-width: 767.98px) {
+
+    #S11.project-section {
+        padding: 35px 0;
+    }
+
+    #S11 .project-card {
+        padding: 22px 18px;
+    }
+}
+
+
+/* ==================================================
+   15. S12 問題解決與學習反思
+   深木色 × 鍛鐵灰 × 銅金
+================================================== */
+
+/* 區塊背景 */
+#S12.reflection-section {
+    background-color: var(--iron-dark);
+    padding: 60px 0;
+}
+
+/* 區塊標題 */
+#S12 .mytitle-03 {
+    color: var(--gold-light);
+}
+
+/* 英文副標題 */
+#S12 .reflection-subtitle {
+    color: var(--copper-main);
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+/* 區塊介紹 */
+#S12 .reflection-intro {
+    color: var(--text-sub);
+    line-height: 1.8;
+}
+
+/* 反思卡片 */
+#S12 .reflection-card {
+    background-color: var(--wood-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* 卡片 Hover */
+#S12 .reflection-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-light);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+/* ICON */
+#S12 .reflection-icon {
+    color: var(--copper-main);
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+/* 卡片標題 */
+#S12 .reflection-card h3 {
+    color: var(--gold-light);
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+/* 英文副標題 */
+#S12 .reflection-en {
+    color: var(--copper-main);
+    margin-bottom: 15px;
+}
+
+/* 反思內容 */
+#S12 .reflection-card p:not(.reflection-en) {
+    color: var(--text-sub);
+    line-height: 1.9;
+    margin-bottom: 0;
+}
+
+/* 結尾文字區塊 */
+#S12 .reflection-message {
+    background-color: var(--wood-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 30px 20px;
+}
+
+/* 結尾標題 */
+#S12 .reflection-message h2 {
+    color: var(--gold-light);
+    font-size: 24px;
+}
+
+/* 結尾文字 */
+#S12 .reflection-message p {
+    color: var(--copper-main);
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+
+/* S12 RWD */
+@media (max-width: 767.98px) {
+
+    #S12.reflection-section {
+        padding: 35px 0;
+    }
+
+    #S12 .reflection-card {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    #S12 .reflection-message h2 {
+        font-size: 20px;
+    }
+}
+
+/* ==================================================
+   16. S13 未來願景 × 職涯發展
+================================================== */
+
+/* 區段背景 */
+#S13 {
+    background-color: var(--iron-dark);
+    padding: 35px 24px;
+}
+
+/* 左右面板 */
+#S13 .s13-panel {
+    background-image: url("../images/leather05.jpg");
+    background-color: var(--iron-dark);
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    padding: 25px;
+    min-height: 460px;
+}
+
+/* 內容卡片 */
+#S13 .s13-card {
+    color: var(--text-main);
+    background-color: rgba(36, 35, 31, 0.94);
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* 卡片 Hover */
+#S13 .s13-card:hover {
+    border-color: var(--gold-main);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* 主標題 */
+#S13 .s13-title {
+    color: var(--gold-light);
+}
+
+/* 英文副標題 */
+#S13 .s13-subtitle {
+    color: var(--copper-main);
+}
+
+/* 內文標題 */
+#S13 .s13-heading {
+    color: var(--paper-main);
+}
+
+/* 項目清單 */
+#S13 .s13-list {
+    color: var(--text-sub);
+    line-height: 2;
+}
+
+/* 清單標記 */
+#S13 .s13-list li::marker {
+    color: var(--gold-main);
+}
+
+/* 卡片按鈕 */
+#S13 .s13-button {
+    color: var(--text-main);
+    background-color: var(--copper-main);
+    border: 1px solid var(--copper-main);
+    border-radius: 6px;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* 按鈕 Hover */
+#S13 .s13-button:hover {
+    color: var(--iron-dark);
+    background-color: var(--gold-light);
+    border-color: var(--gold-light);
+}
+
+/* 鍵盤操作焦點 */
+#S13 .s13-button:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 3px;
+}
+
+/* 手機版 */
+@media (max-width: 767.98px) {
+    #S13 {
+        padding: 25px 15px;
+    }
+
+    #S13 .s13-panel {
+        min-height: 420px;
+        padding: 20px 12px;
+    }
+}
+
+/* ==================================================
+   17. S14 聯絡我們 CONTACT ME
+================================================== */
+
+/* 區段背景 */
+#S14 {
+    padding: 60px 0;
+    background-color: var(--iron-dark);
+}
+
+/* 區塊標題 */
+#S14 .section-title {
+    color: var(--gold-light);
+    margin-bottom: 40px !important;
+}
+
+/* 左側聯絡表單 */
+#S14 #contactForm {
+    height: 100%;
+    padding: 30px;
+    background-color: var(--iron-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* 輸入框與下拉選單 */
+#S14 .form-control,
+#S14 .form-select {
+    color: var(--text-main);
+    background-color: var(--iron-dark);
+    border: 1px solid var(--brass-dark);
+    border-radius: 6px;
+}
+
+/* 輸入框高度 */
+#S14 .form-control-lg,
+#S14 .form-select-lg {
+    min-height: 58px;
+}
+
+/* 浮動標籤 */
+#S14 .form-floating>label {
+    color: var(--text-sub);
+}
+
+/* Textarea */
+#S14 textarea.form-control {
+    min-height: 200px;
+    padding: 15px;
+    resize: vertical;
+}
+
+/* Placeholder */
+#S14 .form-control::placeholder {
+    color: var(--text-sub);
+    opacity: 0.75;
+}
+
+/* Focus 狀態 */
+#S14 .form-control:focus,
+#S14 .form-select:focus {
+    color: var(--text-main);
+    background-color: var(--iron-dark);
+    border-color: var(--gold-main);
+    box-shadow: 0 0 0 0.2rem rgba(201, 164, 92, 0.18);
+}
+
+/* 下拉選單選項 */
+#S14 .form-select option {
+    color: var(--text-main);
+    background-color: var(--iron-main);
+}
+
+/* 表單按鈕共通設定 */
+#S14 .btn {
+    min-width: 90px;
+    padding: 10px 22px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* 取消按鈕 */
+#S14 .btn-secondary {
+    color: var(--text-main);
+    background-color: var(--iron-light);
+    border-color: var(--iron-light);
+}
+
+#S14 .btn-secondary:hover {
+    background-color: var(--brass-dark);
+    border-color: var(--brass-dark);
+}
+
+/* 送出按鈕 */
+#S14 .btn-primary {
+    color: var(--iron-dark);
+    background-color: var(--gold-main);
+    border-color: var(--gold-main);
+}
+
+#S14 .btn-primary:hover {
+    color: var(--iron-dark);
+    background-color: var(--gold-light);
+    border-color: var(--gold-light);
+}
+
+/* 鍵盤操作焦點 */
+#S14 .btn:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 3px;
+}
+
+/* Google Maps */
+#S14 iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    border: 1px solid var(--border-gold) !important;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* S14 RWD */
+@media (max-width: 767.98px) {
+
+    #S14 {
+        padding: 40px 0;
+    }
+
+    #S14 #contactForm {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+
+    #S14 iframe {
+        min-height: 350px;
+    }
+
+    #S14 textarea.form-control {
+        min-height: 160px;
+    }
+}
+
+
+/* ==================================================
+   18. S15 Footer 頁尾
+================================================== */
+
+/* 頁尾區塊 */
+#S15.footer-section {
+    background-color: var(--iron-dark);
+    color: var(--text-main);
+    border-top: 1px solid var(--border-gold);
+}
+
+/* 品牌名稱 */
+#S15 .footer-brand {
+    color: var(--gold-light);
+}
+
+/* 品牌介紹 */
+#S15 .footer-description {
+    color: var(--text-sub);
+    line-height: 1.9;
+}
+
+/* 區塊標題 */
+#S15 .footer-title {
+    color: var(--copper-main);
+}
+
+/* 快速導覽清單 */
+#S15 .footer-nav {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+/* 導覽項目 */
+#S15 .footer-nav li {
+    margin-bottom: 12px;
+}
+
+/* 導覽連結 */
+#S15 .footer-nav a {
+    color: var(--text-sub);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* 導覽連結 Hover */
+#S15 .footer-nav a:hover {
+    color: var(--gold-light);
+}
+
+/* 社群圖示 */
+#S15 .footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-main);
+    background-color: var(--wood-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    margin-right: 10px;
+    text-decoration: none;
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* 社群圖示 Hover */
+#S15 .footer-social a:hover {
+    color: var(--iron-dark);
+    background-color: var(--gold-light);
+    border-color: var(--gold-light);
+    transform: translateY(-4px);
+}
+
+/* 分隔線 */
+#S15 .footer-divider {
+    border-color: var(--border-gold);
+    opacity: 1;
+}
+
+/* 版權資訊 */
+#S15 .footer-copyright {
+    color: var(--text-sub);
+}
+
+
+/* ==================================================
+   19. 全站共用元件
+================================================== */
+
+
+/* --------------------------------------------------
+   19-1. 導覽列社群媒體圖示
+-------------------------------------------------- */
+
+.social-link {
+    display: inline-block;
+    color: var(--gold-main);
+    margin-left: 12px;
+    text-decoration: none;
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--gold-light);
+    transform: translateY(-4px);
+}
+
+
+/* --------------------------------------------------
+   19-2. 會員註冊與登入 Modal
+-------------------------------------------------- */
+
+/* Modal 寬度 */
+.auth-modal {
+    width: calc(100% - 30px);
+    max-width: 800px;
+    margin: auto;
+}
+
+/* 視窗內容過高時可以捲動 */
+.auth-modal .modal-content {
+    max-height: calc(100vh - 30px);
+    overflow-y: auto;
+    border-radius: 12px;
+}
+
+/* 登入視窗另外設定寬度 */
+#loginModal .auth-modal {
+    width: 90%;
+    max-width: 520px;
+}
+
+/* Modal RWD */
+@media (max-width: 575.98px) {
+
+    .auth-modal {
+        width: calc(100% - 16px);
+    }
+
+    .auth-modal .modal-header {
+        padding: 12px 16px;
+    }
+
+    .auth-modal .modal-body {
+        padding: 16px;
+    }
+
+    .auth-modal .modal-body h1 {
+        font-size: 1.3rem;
+    }
+
+    .auth-modal .modal-body h2 {
+        font-size: 1.25rem;
+    }
+
+    .auth-modal .modal-body p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .auth-modal .form-control {
+        font-size: 16px;
+    }
+
+    .auth-modal .modal-footer {
+        padding: 12px 16px;
+        gap: 10px;
+    }
+
+    /* 登入視窗 */
+    #loginModal .auth-modal {
+        width: 90%;
+        max-width: 420px;
+    }
+}

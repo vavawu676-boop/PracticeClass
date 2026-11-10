@@ -1,0 +1,1049 @@
+/* =================================
+   01. 全站基本設定
+   字體請在 index.html 的 <style> 中設定
+================================= */
+
+/* ==================================================
+   01. 全站色彩變數
+   深色木質 × 金工鍛造色彩系統
+================================================== */
+
+:root {
+    --wood-dark: #241914;
+    --wood-dark-alt: #241A14;
+    --wood-main: #33231b;
+    --wood-main-alt: #33241B;
+    --wood-main-original: #c7a77a;
+    --wood-light: #4a3224;
+    --wood-light-alt: #493528;
+
+    --wood-red: #9E2F2F;
+
+    --iron-dark: #171717;
+    --iron-dark-alt: #1C1B18;
+    --iron-main: #242424;
+    --iron-main-alt: #2C2A25;
+    --iron-light: #343434;
+
+    --copper-main: #b06a3c;
+
+    --gold-dark: #8a672d;
+    --gold-main: #c9a45c;
+    --gold-light: #e2c47a;
+
+    --brass-dark: #6F5638;
+    --brass-main: #9B7B4F;
+    --brass-light: #C2A16A;
+
+    --paper-main: #E3D6BD;
+    --paper-dark: #B8AA91;
+
+    --text-main: #f3ead5;
+    --text-main-alt: #f0e5d0;
+    --text-sub: #b9aa92;
+
+    --border-gold: rgba(201, 164, 92, 0.45);
+
+    /* 對應目前 ALL BE MINE 首頁既有選擇器 */
+    --color-primary: var(--gold-main);
+    --color-dark: var(--iron-dark);
+    --color-text: var(--text-main);
+    --color-light: var(--wood-dark);
+    --color-white: var(--iron-main);
+    --color-border: var(--border-gold);
+
+    --container-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    color: var(--text-main);
+    line-height: 1.8;
+    background-color: var(--iron-main);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.section {
+    padding: 110px 0;
+}
+
+
+/* =================================
+   02. 共用文字樣式
+================================= */
+
+.section-en {
+    color: var(--gold-main);
+    margin-bottom: 15px;
+}
+
+.section-title {
+    color: var(--gold-light);
+    line-height: 1.4;
+}
+
+.section-description {
+    margin-top: 18px;
+    color: var(--text-sub);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 50px;
+}
+
+.section-heading.center {
+    display: block;
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.title-line {
+    width: 45px;
+    height: 2px;
+    background-color: var(--gold-main);
+    margin: 25px 0;
+}
+
+
+/* =================================
+   03. 按鈕
+================================= */
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    min-width: 160px;
+    padding: 13px 25px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.btn-light {
+    color: var(--gold-light);
+    background-color: var(--iron-main);
+}
+
+.btn-light:hover {
+    color: var(--text-main);
+    background-color: transparent;
+    border-color: var(--text-main);
+}
+
+.btn-dark {
+    color: var(--text-main);
+    background-color: var(--gold-light);
+}
+
+.btn-dark:hover {
+    background-color: var(--gold-main);
+}
+
+
+/* =================================
+   04. Header 導覽列
+================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--iron-dark);
+    border-bottom: 1px solid var(--border-gold);
+}
+
+.header-inner {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo,
+.footer-logo {
+    color: var(--gold-light);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav a {
+    position: relative;
+    color: var(--text-main);
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: var(--gold-main);
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--gold-main);
+    transition: 0.3s;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    width: 35px;
+    height: 35px;
+    border: 0;
+    background: transparent;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    margin: 6px auto;
+    background-color: var(--gold-light);
+    transition: 0.3s;
+}
+
+
+/* =================================
+   05. S01 Hero 主視覺
+================================= */
+
+.hero {
+    position: relative;
+    min-height: 750px;
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(23, 23, 23, 0.82),
+            rgba(36, 25, 20, 0.25)
+        ),
+        url("../images/hero.jpg") center / cover no-repeat;
+
+    background-color: var(--wood-main);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: var(--text-main);
+}
+
+.hero-content .section-en {
+    color: #f0ded0;
+}
+
+.hero h1 {
+    line-height: 1.5;
+}
+
+.hero-description {
+    margin: 25px 0 35px;
+}
+
+.scroll-down {
+    position: absolute;
+    right: 5%;
+    bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-main);
+}
+
+.scroll-down span {
+}
+
+
+/* =================================
+   06. S02 品牌理念
+================================= */
+
+.split-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 90px;
+}
+
+.image-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--iron-light);
+    color: var(--text-sub);
+}
+
+.about-image {
+    min-height: 500px;
+    background-image: url("../images/about.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.about-image span,
+.story-image span,
+.product-image span,
+.news-featured-image span {
+    padding: 8px 12px;
+    background-color: rgba(36, 25, 20, 0.82);
+}
+
+.about-content h3 {
+    margin-bottom: 25px;
+    color: var(--gold-light);
+    line-height: 1.7;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+}
+
+.about-content .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--gold-main);
+    border-bottom: 1px solid var(--color-primary);
+    padding-bottom: 6px;
+    transition: 0.3s;
+    margin-top: 25px;
+}
+
+.about-content .text-link:hover {
+    gap: 23px;
+}
+
+
+/* =================================
+   07. S03 人生階段故事
+================================= */
+
+.story-section {
+    background-color: var(--wood-dark);
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.story-card {
+    background-color: var(--iron-main);
+}
+
+.story-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+}
+
+.story-card:nth-child(1) .story-image {
+    background-image: url("../images/story-01.jpg");
+}
+
+.story-card:nth-child(2) .story-image {
+    background-image: url("../images/story-02.jpg");
+}
+
+.story-card:nth-child(3) .story-image {
+    background-image: url("../images/story-03.jpg");
+}
+
+.story-info {
+    position: relative;
+    padding: 30px;
+}
+
+.story-number {
+    color: var(--gold-main);
+}
+
+.story-info h3 {
+    margin: 10px 0;
+    color: var(--gold-light);
+}
+
+.story-info p {
+}
+
+
+/* =================================
+   08. S04 年齡互動展示
+================================= */
+
+.age-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.age-image {
+    min-height: 470px;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.3s;
+}
+
+.age-info {
+    padding: 30px 0;
+}
+
+.age-label {
+    color: var(--gold-main);
+}
+
+.age-info h3 {
+    margin: 5px 0 20px;
+    color: var(--gold-light);
+    line-height: 1.2;
+}
+
+.age-info h3 small {
+}
+
+.age-info h4 {
+    margin-bottom: 15px;
+    color: var(--gold-light);
+}
+
+.age-info p {
+}
+
+.age-controls {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.circle-btn {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border-gold);
+    border-radius: 50%;
+    background-color: var(--iron-main);
+    color: var(--gold-light);
+    transition: 0.3s;
+}
+
+.circle-btn:hover {
+    color: var(--text-main);
+    background-color: var(--gold-main);
+    border-color: var(--gold-main);
+}
+
+.age-pagination {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.age-dot {
+    width: 8px;
+    height: 8px;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--brass-dark);
+}
+
+.age-dot.active {
+    background-color: var(--gold-main);
+}
+
+
+/* =================================
+   09. S05 推薦商品
+================================= */
+
+.product-section {
+    background-color: var(--wood-dark);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--wood-main);
+}
+
+.product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.product-card:nth-child(1) .product-image {
+    background-image: url("../images/product-01.jpg");
+}
+
+.product-card:nth-child(2) .product-image {
+    background-image: url("../images/product-02.jpg");
+}
+
+.product-card:nth-child(3) .product-image {
+    background-image: url("../images/product-03.jpg");
+}
+
+.product-image:hover {
+    opacity: 0.8;
+}
+
+.product-info {
+    padding: 25px;
+}
+
+.product-category {
+    color: var(--gold-main);
+}
+
+.product-info h3 {
+    margin: 10px 0;
+    color: var(--gold-light);
+}
+
+.product-info p {
+    margin-bottom: 20px;
+}
+
+.product-link {
+    color: var(--gold-main);
+}
+
+
+/* =================================
+   10. S06 最新消息
+================================= */
+
+.news-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+}
+
+.news-featured-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 330px;
+    background-image: url("../images/news.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.news-featured-info {
+    padding-top: 20px;
+}
+
+.news-date,
+.news-item-info > span {
+    color: var(--gold-main);
+}
+
+.news-featured-info h3 {
+    margin: 8px 0;
+    color: var(--gold-light);
+}
+
+.news-featured-info p {
+}
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--border-gold);
+}
+
+.news-item:first-child {
+    padding-top: 0;
+}
+
+.news-item-date {
+    min-width: 65px;
+    text-align: center;
+    color: var(--gold-main);
+}
+
+.news-item-date span {
+    display: block;
+    line-height: 1.2;
+}
+
+.news-item-date small {
+}
+
+.news-item-info {
+    flex: 1;
+}
+
+.news-item-info h3 {
+    margin: 5px 0;
+    color: var(--gold-light);
+}
+
+.news-item-info p {
+}
+
+.news-arrow {
+    color: var(--gold-main);
+}
+
+
+/* =================================
+   11. S07 聯絡表單
+================================= */
+
+.contact-section {
+    background-color: var(--wood-dark);
+}
+
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gold-light);
+}
+
+.form-group label span {
+    color: var(--copper-main);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--border-gold);
+    border-radius: 0;
+    outline: none;
+    background-color: var(--wood-main);
+    color: var(--text-main);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--gold-main);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-notice {
+    margin-top: 15px;
+}
+
+
+/* =================================
+   12. S08 地圖
+================================= */
+
+.map-placeholder {
+    min-height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(23, 23, 23, 0.72),
+            rgba(23, 23, 23, 0.72)
+        ),
+        url("../images/map.jpg") center / cover no-repeat;
+
+    background-color: var(--iron-main);
+}
+
+.map-content {
+    color: var(--text-main);
+}
+
+.map-marker {
+}
+
+.map-content h2 {
+    margin: 10px 0;
+}
+
+.map-content p {
+    margin-bottom: 25px;
+}
+
+
+/* =================================
+   13. Footer 頁尾
+================================= */
+
+.footer {
+    padding: 75px 0 25px;
+    color: var(--text-main);
+    background-color: var(--iron-dark);
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+    gap: 45px;
+    padding-bottom: 55px;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+
+.footer-brand p,
+.footer-contact p {
+    line-height: 2.2;
+}
+
+.footer-nav,
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-nav h3,
+.footer-contact h3 {
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.footer-nav a {
+    transition: 0.3s;
+}
+
+.footer-nav a:hover {
+    color: var(--gold-light);
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+}
+
+.footer-bottom p {
+}
+
+
+/* =================================
+   14. RWD 平板版
+================================= */
+
+@media (max-width: 1024px) {
+
+    .nav {
+        gap: 18px;
+    }
+
+    .nav a {
+    }
+
+    .split-layout {
+        gap: 45px;
+    }
+
+    .age-content {
+        gap: 45px;
+    }
+
+    .footer-main {
+        gap: 25px;
+    }
+
+}
+
+
+/* =================================
+   15. RWD 手機版
+================================= */
+
+@media (max-width: 767px) {
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .container {
+        width: 88%;
+    }
+
+    .section-title {
+    }
+
+    .section-heading {
+        align-items: start;
+        gap: 20px;
+    }
+
+    .section-heading:not(.center) {
+        flex-direction: column;
+    }
+
+
+    /* Header */
+
+    .header-inner {
+        min-height: 68px;
+    }
+
+    .logo {
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 6%;
+        background-color: var(--iron-main);
+        border-top: 1px solid var(--border-gold);
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav a {
+        padding: 13px 0;
+        border-bottom: 1px solid var(--border-gold);
+    }
+
+    .nav a::after {
+        display: none;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 600px;
+        background-position: center;
+    }
+
+    .hero h1 {
+    }
+
+    .hero-description {
+        max-width: 300px;
+    }
+
+
+    /* About */
+
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-image {
+        min-height: 350px;
+    }
+
+
+    /* Story */
+
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .story-image {
+        height: 300px;
+    }
+
+
+    /* Age */
+
+    .age-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .age-image {
+        min-height: 330px;
+    }
+
+    .age-info h3 {
+    }
+
+
+    /* Products */
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .product-image {
+        height: 320px;
+    }
+
+
+    /* News */
+
+    .news-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .news-featured-image {
+        height: 260px;
+    }
+
+    .news-item {
+        gap: 15px;
+    }
+
+
+    /* Contact */
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+
+    /* Map */
+
+    .map-placeholder {
+        min-height: 320px;
+    }
+
+
+    /* Footer */
+
+    .footer {
+        padding-top: 55px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 20px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/* =================================
+   16. 小尺寸手機
+================================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+    }
+
+    .section-title {
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+}

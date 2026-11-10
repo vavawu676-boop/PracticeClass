@@ -1,69 +1,95 @@
-/* 呼叫外部用的字體 上網找GOOGLE FONT */
+/* ==================================================
+   01. Google Fonts 字體載入
+================================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&family=Zen+Old+Mincho&display=swap');
 
-/* ---------- 深色木質 × 金工鍛造色彩系統 ---------- */
+
+/* ==================================================
+   02. 全站色彩變數
+   深色木質 × 金工鍛造色彩系統
+================================================== */
+
 :root {
     /* 木質色系 Wood */
+    --wood-dark: #241914;
+    --wood-dark-alt: #241A14;
+    --wood-main: #33231b;
+    --wood-main-alt: #33241B;
+    --wood-main-original: #c7a77a;
+    --wood-light: #4a3224;
+    --wood-light-alt: #493528;
 
-    --wood-dark: #241914;       /* 深胡桃木／黑木 */
-    --wood-dark-alt: #241A14;   /* 燻黑木頭 */
-    --wood-main: #33231b;       /* 深棕木色 */
-    --wood-main-alt: #33241B;   /* 老木頭 */
-    --wood-main-original: #c7a77a; /* 原始木質主色：暖米棕／淺木色 */
-    --wood-light: #4a3224;      /* 暖棕木色 */
-    --wood-light-alt: #493528;  /* 舊木板 */
-
-    /* 紅色系 Red b*/
-
-    --wood-red: #9E2F2F;        /* 深磚紅／鐵鏽紅 */
+    /* 紅色系 Red */
+    --wood-red: #9E2F2F;
 
     /* 金工／鍛造鐵色系 Iron */
-    --iron-dark: #171717;       /* 鍛造黑 */
-    --iron-dark-alt: #1C1B18;   /* 鍛造黑鐵 */
-    --iron-main: #242424;       /* 深灰鐵色 */
-    --iron-main-alt: #2C2A25;   /* 老鐵灰 */
-    --iron-light: #343434;      /* 較亮的金屬灰 */
+    --iron-dark: #171717;
+    --iron-dark-alt: #1C1B18;
+    --iron-main: #242424;
+    --iron-main-alt: #2C2A25;
+    --iron-light: #343434;
 
-    /* 銅色系 */
-
-    --copper-main: #b06a3c;     /* 銅色／鐵鏽金屬色 */
+    /* 銅色系 Copper */
+    --copper-main: #b06a3c;
 
     /* 金色系 Gold */
-
-    --gold-dark: #8a672d;        /* 暗金色／舊金／黃銅色 */
-    --gold-main: #c9a45c;        /* 溫暖金色 */
-    --gold-light: #e2c47a;       /* 亮金色／金屬高光 */
+    --gold-dark: #8a672d;
+    --gold-main: #c9a45c;
+    --gold-light: #e2c47a;
 
     /* 黃銅色系 Brass */
+    --brass-dark: #6F5638;
+    --brass-main: #9B7B4F;
+    --brass-light: #C2A16A;
 
-    --brass-dark: #6F5638;       /* 氧化黃銅 */
-    --brass-main: #9B7B4F;       /* 舊黃銅 */
-    --brass-light: #C2A16A;      /* 褪色金屬金 */
-
-    /* 紙張色系 Paper  */
-
-    --paper-main: #E3D6BD;       /* 泛黃紙張 */
-    --paper-dark: #B8AA91;       /* 舊紙灰米色 */
+    /* 紙張色系 Paper */
+    --paper-main: #E3D6BD;
+    --paper-dark: #B8AA91;
 
     /* 文字色系 Text */
-
-    --text-main: #f3ead5;        /* 原始主文字：暖米白／羊皮紙色 */
-    --text-main-alt: #f0e5d0;    /* 主文字：暖米白 */
-    --text-sub: #b9aa92;         /* 次要文字：灰米色 */
+    --text-main: #f3ead5;
+    --text-main-alt: #f0e5d0;
+    --text-sub: #b9aa92;
 
     /* 邊框與裝飾 Border */
+    --border-gold: rgba(201, 164, 92, 0.45);
 
-    --border-gold: rgba(201, 164, 92, 0.45); /* 半透明金色邊框 */
+    /* S10 配色對應 */
+    --s10-silver: var(--paper-main);
+    --s10-charcoal: var(--gold-light);
+    --s10-dark-gray: var(--text-main);
+    --s10-blue: var(--copper-main);
+    --s10-blue-hover: var(--gold-dark);
+    --s10-white: var(--text-main);
+    --s10-border: var(--border-gold);
 }
 
 
+/* ==================================================
+   03. 全站基本字體設定
+================================================== */
 
-/* 改變網站中所有字體 呼叫第一排IMPORT的設定字形 */
+/* 全站內文使用圓體 */
 body {
-    font-family: "Yusei Magic", sans-serif;
+    font-family: "Zen Maru Gothic", sans-serif;
 }
 
-/* 字體粗細度呼叫 */
+/* 標題使用明體 */
+h1,
+h2,
+h3,
+.mytitle-01,
+.mytitle-02,
+.mytitle-03 {
+    font-family: "Zen Old Mincho", serif;
+}
+
+
+/* ==================================================
+   04. 字體粗細工具類別
+================================================== */
+
 .fw-100 {
     font-weight: 100;
 }
@@ -100,12 +126,15 @@ body {
     font-weight: 900;
 }
 
-/* 標題設計版型 */
+
+/* ==================================================
+   05. 共用標題樣式
+================================================== */
+
 .mytitle-01 {
     font-size: 36px;
     font-weight: 500;
     text-align: center;
-    /* 舊黃銅色：低調、溫暖，適合小標題 */
     color: #B08D57;
 }
 
@@ -113,7 +142,6 @@ body {
     font-size: 45px;
     font-weight: 700;
     text-align: center;
-    /* 古銅金：帶有日本老工房與金屬氧化後的質感 */
     color: #C49A5A;
 }
 
@@ -121,160 +149,890 @@ body {
     font-size: 52px;
     font-weight: 900;
     text-align: center;
-    color: #D4AF6A;
-    /* 鍛造金：較明亮的金屬色，作為主標題視覺焦點 */
-    /* 給予範圍背景色 */
-    background-color: #C49A5A;
-
+    color: var(--gold-light);
+    background-color: var(--iron-dark);
+    padding: 20px;
 }
 
-/* 背景圖用  把圖片預設的尺寸位置寫好*/
+
+/* ==================================================
+   06. 共用背景圖片設定
+================================================== */
 
 .bg-img {
-    /* 定位背景圖片位置 X軸 Y軸 */
     background-position: center center;
-    /* 定位背景圖片尺寸 COVER自動置中調整 */
     background-size: cover;
 }
 
-/* 時間軸：中間垂直線 */
-.timeline-section {
-    position: relative;
-}
-/* ::before：在該元素(timeline-section)的內容前面建立一個偽元素。 */
-.timeline-section::before {
-    position: absolute;
-    content: "";
-    width: 5px;
-    background-color: rgba(102, 81, 12, 0.3);
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
-/* ==============================
-   時間軸：圓形定位點
-   ============================== */
-.timeline-section-pointer {
-    position: relative;
-}
+/* ==================================================
+   07. 卷軸移動效果 ROLLER
+================================================== */
 
-.timeline-section-pointer::before {
-    position: absolute;
-    content: "";
-    width: 20px;
-    height: 20px;
-    background-color: rgba(102, 81, 12, 0.8);
-    border-radius: 50%;
-    border: 5px solid rgba(48, 37, 1, 0.8);
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-}
-
-
-/* 卷軸動畫ROLLER */
-/* .roller-t top 移動 */
+/* 上方移入 */
 .roller-t {
     position: relative;
     overflow: hidden;
-    /*隱藏移動的物件ROLLER*/
 }
 
 .roller-t .rollerbox-t {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(155, 143, 054, 0.3);
+    background-color: rgba(155, 143, 54, 0.3);
     transform: translateY(-100%);
-    transition: transform 3S;
+    transition: transform 3s;
     display: flex;
-    /*物件指定成FLEX，才能做下面的置中動作*/
     justify-content: center;
-    /*水平置中*/
     align-items: center;
-    /*垂直置中*/
 }
 
 .roller-t:hover .rollerbox-t {
     transform: translateY(0);
 }
 
-/* .roller-b bottom移動 */
+/* 下方移入 */
 .roller-b {
     position: relative;
     overflow: hidden;
-    /*隱藏移動的物件ROLLER*/
 }
 
 .roller-b .rollerbox-b {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(155, 143, 054, 0.3);
+    background-color: rgba(155, 143, 54, 0.3);
     transform: translateY(100%);
-    transition: transform 3S;
+    transition: transform 3s;
     display: flex;
-    /*物件指定成FLEX，才能做下面的置中動作*/
     justify-content: center;
-    /*水平置中*/
     align-items: center;
-    /*垂直置中*/
 }
 
 .roller-b:hover .rollerbox-b {
     transform: translateY(0);
 }
 
-/* .roller-l LEFT移動 */
+/* 左側移入 */
 .roller-l {
     position: relative;
     overflow: hidden;
-    /*隱藏移動的物件ROLLER*/
 }
 
 .roller-l .rollerbox-l {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(155, 143, 054, 0.3);
+    background-color: rgba(155, 143, 54, 0.3);
     transform: translateX(-100%);
-    transition: transform 3S;
+    transition: transform 3s;
     display: flex;
-    /*物件指定成FLEX，才能做下面的置中動作*/
     justify-content: center;
-    /*水平置中*/
     align-items: center;
-    /*垂直置中*/
 }
 
 .roller-l:hover .rollerbox-l {
     transform: translateX(0);
 }
 
-/* .roller-R RIGHT移動 */
+/* 右側移入 */
 .roller-r {
     position: relative;
     overflow: hidden;
-    /*隱藏移動的物件ROLLER*/
 }
 
 .roller-r .rollerbox-r {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(155, 143, 054, 0.3);
+    background-color: rgba(155, 143, 54, 0.3);
     transform: translateX(100%);
-    transition: transform 3S;
+    transition: transform 3s;
     display: flex;
-    /*物件指定成FLEX，才能做下面的置中動作*/
     justify-content: center;
-    /*水平置中*/
     align-items: center;
-    /*垂直置中*/
 }
 
 .roller-r:hover .rollerbox-r {
     transform: translateX(0);
+}
+
+
+/* ==================================================
+   08. S08 學經歷介紹
+================================================== */
+
+#S08 {
+    background-color: var(--iron-dark);
+    padding: 35px 0;
+}
+
+/* 區塊標題 */
+#S08 .h1 {
+    color: var(--gold-main) !important;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 35px !important;
+}
+
+/* 學經歷內容 */
+#S08 .experience-list {
+    background-color: var(--wood-main);
+    padding: 25px 20px;
+    border-radius: 10px;
+    border: 1px solid var(--border-gold);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 左側標題 */
+#S08 .experience-list>dt {
+    color: var(--gold-main);
+    font-weight: 600;
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--border-gold);
+}
+
+/* 右側文字 */
+#S08 .experience-list>dd {
+    color: var(--text-main);
+    line-height: 1.9;
+    padding: 12px 10px;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--border-gold);
+}
+
+/* 內文段落 */
+#S08 .experience-list p {
+    margin-bottom: 10px;
+}
+
+/* 內層工作期望 */
+#S08 .experience-list dl {
+    margin-bottom: 0;
+}
+
+#S08 .experience-list dl dt {
+    color: var(--copper-main);
+    font-weight: 600;
+    padding: 8px;
+}
+
+#S08 .experience-list dl dd {
+    color: var(--text-sub);
+    line-height: 1.8;
+    padding: 8px;
+    margin-bottom: 0;
+}
+
+/* 右側圖片 */
+#S08 .bg-img {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* S08 手機版 */
+@media (max-width: 767px) {
+    #S08 {
+        padding: 20px 0;
+    }
+
+    #S08 .experience-list {
+        padding: 15px 10px;
+    }
+
+    #S08 .experience-list>dt,
+    #S08 .experience-list>dd {
+        padding: 10px;
+    }
+}
+
+
+/* ==================================================
+   09. S10 未來展望
+================================================== */
+
+/* 左右背景區塊 */
+#S10 .s10-panel {
+    background-image: url("../images/leather05.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* 文字卡片 */
+#S10 .s10-card {
+    background-color: rgba(36, 25, 20, 0.9);
+    border: 1px solid var(--s10-border);
+    color: var(--s10-silver);
+}
+
+/* 中文主標題 */
+#S10 .s10-title {
+    color: var(--s10-charcoal);
+}
+
+/* 英文副標題 */
+#S10 .s10-subtitle {
+    color: var(--s10-blue);
+}
+
+/* 內文小標題 */
+#S10 .s10-heading {
+    color: var(--s10-charcoal);
+}
+
+/* 技術條列文字 */
+#S10 .s10-list {
+    color: var(--s10-dark-gray);
+    line-height: 1.8;
+}
+
+/* 查看作品／聯絡我按鈕 */
+#S10 .s10-button {
+    color: var(--s10-blue);
+    border: 1px solid var(--s10-blue);
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* 滑鼠移入按鈕 */
+#S10 .s10-button:hover {
+    color: var(--s10-white);
+    background-color: var(--s10-blue);
+    border-color: var(--s10-blue);
+}
+
+/* 鍵盤操作焦點 */
+#S10 .s10-button:focus-visible {
+    outline: 2px solid var(--s10-blue-hover);
+    outline-offset: 3px;
+}
+
+
+/* ==================================================
+   10. S11 技能與工具
+================================================== */
+
+#S11.skill-section {
+    background-color: var(--iron-dark);
+    padding: 60px 0;
+}
+
+#S11 .skill-subtitle {
+    color: var(--copper-main);
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+#S11 .skill-intro {
+    color: var(--text-sub);
+    line-height: 1.8;
+}
+
+#S11 .skill-card {
+    background-color: var(--wood-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+#S11 .skill-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-main);
+}
+
+#S11 .skill-icon {
+    color: var(--gold-main);
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+#S11 .skill-card h3 {
+    color: var(--gold-light);
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+#S11 .skill-en {
+    color: var(--copper-main);
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+#S11 .skill-card ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+#S11 .skill-card li {
+    color: var(--text-main);
+    line-height: 2;
+}
+
+
+/* ==================================================
+   11. S12 學習歷程 Timeline
+================================================== */
+
+#S12.timeline-section {
+    background-color: var(--wood-dark);
+    padding: 60px 0;
+}
+
+#S12 .timeline-subtitle {
+    color: var(--copper-main);
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+#S12 .timeline-intro {
+    color: var(--text-sub);
+    line-height: 1.8;
+}
+
+/* Timeline 外層 */
+#S12 .container {
+    position: relative;
+}
+
+/* 中央時間軸 */
+#S12 .container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background-color: var(--gold-dark);
+    transform: translateX(-50%);
+}
+
+/* 每一個時間節點 */
+#S12 .timeline-item {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+/* 時間節點圓點 */
+#S12 .timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--gold-main);
+    border: 4px solid var(--wood-dark);
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+/* 時間軸卡片 */
+#S12 .timeline-card {
+    background-color: var(--iron-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+#S12 .timeline-card:hover {
+    border-color: var(--gold-main);
+    transform: translateY(-5px);
+}
+
+/* 編號 */
+#S12 .timeline-number {
+    color: var(--gold-main);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* 標題 */
+#S12 .timeline-card h3 {
+    color: var(--gold-light);
+    margin: 12px 0 5px;
+}
+
+/* 英文副標題 */
+#S12 .timeline-en {
+    color: var(--copper-main);
+    margin-bottom: 15px;
+}
+
+/* 內文 */
+#S12 .timeline-card p:not(.timeline-en) {
+    color: var(--text-main);
+    line-height: 1.9;
+}
+
+/* 技術標籤 */
+#S12 .timeline-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+#S12 .timeline-tags span {
+    color: var(--gold-light);
+    background-color: var(--wood-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 13px;
+}
+
+/* S12 手機版 */
+@media (max-width: 767px) {
+    #S12 .container::before {
+        left: 15px;
+    }
+
+    #S12 .timeline-item::before {
+        left: 15px;
+    }
+
+    #S12 .timeline-content {
+        padding-left: 45px;
+    }
+
+    #S12 .timeline-empty {
+        display: none;
+    }
+
+    #S12 .timeline-card {
+        padding: 20px;
+    }
+}
+
+
+/* ==================================================
+   12. S13 專案實作流程
+================================================== */
+
+#S13.project-section {
+    background-color: var(--iron-dark);
+    padding: 60px 0;
+}
+
+#S13 .project-subtitle {
+    color: var(--copper-main);
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+#S13 .project-intro {
+    color: var(--text-sub);
+    line-height: 1.8;
+}
+
+#S13 .project-card {
+    position: relative;
+    background-color: var(--wood-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+#S13 .project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-main);
+}
+
+#S13 .project-number {
+    color: var(--gold-main);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#S13 .project-icon {
+    color: var(--copper-main);
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+#S13 .project-card h3 {
+    color: var(--gold-light);
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+#S13 .project-en {
+    color: var(--copper-main);
+    margin-bottom: 15px;
+}
+
+#S13 .project-card p:not(.project-en) {
+    color: var(--text-main);
+    line-height: 1.9;
+    margin-bottom: 0;
+}
+
+/* S13 手機版 */
+@media (max-width: 767px) {
+    #S13.project-section {
+        padding: 35px 0;
+    }
+
+    #S13 .project-card {
+        padding: 22px 18px;
+    }
+}
+
+
+/* ==================================================
+   13. S14 問題解決與學習反思
+================================================== */
+
+#S14.reflection-section {
+    background-color: var(--wood-dark);
+    padding: 60px 0;
+}
+
+#S14 .reflection-subtitle {
+    color: var(--copper-main);
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+#S14 .reflection-intro {
+    color: var(--text-sub);
+    line-height: 1.8;
+}
+
+#S14 .reflection-card {
+    background-color: var(--iron-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+#S14 .reflection-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-main);
+}
+
+#S14 .reflection-icon {
+    color: var(--gold-main);
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+#S14 .reflection-card h3 {
+    color: var(--gold-light);
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+#S14 .reflection-en {
+    color: var(--copper-main);
+    margin-bottom: 15px;
+}
+
+#S14 .reflection-card p:not(.reflection-en) {
+    color: var(--text-main);
+    line-height: 1.9;
+    margin-bottom: 0;
+}
+
+/* 結尾文字 */
+#S14 .reflection-message {
+    background-color: var(--wood-main);
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 30px 20px;
+}
+
+#S14 .reflection-message h2 {
+    color: var(--gold-light);
+    font-size: 24px;
+}
+
+#S14 .reflection-message p {
+    color: var(--copper-main);
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+
+/* S14 手機版 */
+@media (max-width: 767px) {
+    #S14.reflection-section {
+        padding: 35px 0;
+    }
+
+    #S14 .reflection-card {
+        padding: 22px;
+    }
+
+    #S14 .reflection-message h2 {
+        font-size: 20px;
+    }
+}
+
+
+/* S09 Google 地圖 RWD */
+#S09 iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    border: 0;
+}
+
+/* 圖片自動適應容器 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.bg-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* 會員註冊與登入視窗 */
+.auth-modal {
+    width: calc(100% - 30px);
+    max-width: 800px;
+    margin: auto;
+}
+
+/* 平板與手機 */
+@media (max-width: 767.98px) {
+    .auth-modal {
+        width: calc(100% - 20px);
+        margin: 10px auto;
+    }
+}
+
+/* 手機 */
+@media (max-width: 575.98px) {
+    .auth-modal {
+        width: calc(100% - 16px);
+    }
+}
+
+/* 會員註冊與登入表單 */
+.auth-modal .modal-content {
+    border-radius: 12px;
+}
+
+/* 手機版 */
+@media (max-width: 575.98px) {
+
+    .auth-modal .modal-header {
+        padding: 12px 16px;
+    }
+
+    .auth-modal .modal-body {
+        padding: 16px;
+    }
+
+    .auth-modal .modal-body h1 {
+        font-size: 1.3rem;
+    }
+
+    .auth-modal .modal-body p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .auth-modal .form-control {
+        font-size: 16px;
+    }
+
+    .auth-modal .modal-footer {
+        padding: 12px 16px;
+    }
+}
+
+/* 會員註冊與登入視窗 */
+.auth-modal {
+    width: calc(100% - 30px);
+    max-width: 800px;
+    margin: auto;
+}
+
+/* 手機版 */
+@media (max-width: 575.98px) {
+
+    .auth-modal {
+        width: calc(100% - 16px);
+    }
+
+    .auth-modal .modal-body {
+        padding: 16px;
+    }
+
+    .auth-modal .modal-body p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .auth-modal .form-control {
+        font-size: 16px;
+    }
+}
+
+/* ================================
+   會員註冊與登入視窗
+================================ */
+
+.auth-modal {
+    width: calc(100% - 30px);
+    max-width: 800px;
+    margin: auto;
+}
+
+/* 視窗內容過高時可以捲動 */
+.auth-modal .modal-content {
+    max-height: calc(100vh - 30px);
+    overflow-y: auto;
+}
+
+/* 手機版 */
+@media (max-width: 575.98px) {
+
+    .auth-modal {
+        width: calc(100% - 16px);
+    }
+
+    .auth-modal .modal-body {
+        padding: 16px;
+    }
+
+    .auth-modal .modal-body h2 {
+        font-size: 1.25rem;
+    }
+
+    .auth-modal .modal-body p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .auth-modal .form-control {
+        font-size: 16px;
+    }
+
+    .auth-modal .modal-footer {
+        gap: 10px;
+    }
+}
+
+/* =========================
+   S15 Footer
+========================= */
+
+.footer-section {
+    background-color: var(--wood-dark);
+    color: var(--text-main);
+    border-top: 2px solid var(--gold-dark);
+}
+
+/* 品牌名稱 */
+.footer-brand {
+    color: var(--gold-main);
+}
+
+/* 品牌介紹 */
+.footer-description {
+    color: var(--text-sub);
+    line-height: 2;
+}
+
+/* 區塊標題 */
+.footer-title {
+    color: var(--gold-light);
+}
+
+/* 快速導覽 */
+.footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 12px;
+}
+
+.footer-nav a {
+    color: var(--text-sub);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-nav a:hover {
+    color: var(--gold-light);
+}
+
+/* 社群圖示 */
+.footer-social {
+    display: flex;
+    gap: 18px;
+}
+
+.footer-social a {
+    color: var(--text-sub);
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: var(--copper-main);
+    transform: translateY(-3px);
+}
+
+/* 分隔線 */
+.footer-divider {
+    border-color: var(--border-gold);
+    margin: 30px 0 20px;
+}
+
+/* 版權資訊 */
+.footer-copyright {
+    color: var(--text-sub);
+}
+
+/* 社群媒體圖示 */
+.social-link {
+    display: inline-block;
+    color: var(--gold-main);
+    margin-left: 12px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* 滑鼠移入效果 */
+.social-link:hover {
+    color: var(--gold-light);
+    transform: translateY(-4px);
+}
+
+/* =========================
+   會員登入 Modal
+========================= */
+
+#loginModal .auth-modal {
+    width: 90%;
+    max-width: 520px;
+}
+
+/* 手機版 */
+@media (max-width: 576px) {
+    #loginModal .auth-modal {
+        width: 90%;
+        max-width: 420px;
+    }
 }

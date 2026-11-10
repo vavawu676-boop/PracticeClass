@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一頁式網站SPA-個人履歷排版練習</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/SPA-02.css">
+
+</head>
+
+<body>
+    <!--section02 Navbar選單-->
+    <section id="S02" class="bg-dark navbar-fixed">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#S03">
+                        <i class="fa-solid fa-cat fa-2xl text-warning"></i>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                            <!-- 首頁 -->
+                            <li class="nav-item">
+                                <a class="nav-link active text-light" aria-current="page" href="#S03">
+
+                                    首頁
+                                </a>
+                            </li>
+
+                            <!-- 工作經驗 -->
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="#S08">
+                                    <i class="fa-brands fa-upwork fa-lg text-light"></i>
+                                    工作經驗
+                                </a>
+                            </li>
+
+                            <!-- 專長項目下拉選單 -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-light" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    專長項目
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#S09">技能與工具</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#S07">作品集</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#S10">學習歷程</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- 聯絡我 -->
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="#S14">
+                                    <i class="fa-solid fa-envelope fa-lg"></i>
+                                    聯絡我
+                                </a>
+                            </li>
+
+                        </ul>
+
+
+                        <!-- 註冊與登入 -->
+                        <div>
+                            <button class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#registerModal">
+                                註冊
+                            </button>
+
+                            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                登入
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="text-end">
+                                <a href="#" class="social-link" aria-label="GitHub">
+                                    <i class="fa-brands fa-github fa-2x"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="LINE">
+                                    <i class="fa-brands fa-line fa-2x"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Threads">
+                                    <i class="fa-brands fa-threads fa-2x"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Instagram">
+                                    <i class="fa-brands fa-instagram fa-2x"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Twitter">
+                                    <i class="fa-brands fa-square-twitter fa-2x"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <!-- registerModal 註冊按鈕-->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true"
+        data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered auth-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="registerModalLabel">會員註冊</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <h2>會員註冊條款</h2>
+                            <p>第一條｜帳號管理:會員須提供正確資料，並妥善保管帳號與密碼，不得任意轉讓或提供他人使用。</p>
+                            <p>第二條｜個資保護:本網站依隱私權政策及相關法規蒐集、處理與利用會員資料，並採取合理安全措施。</p>
+                            <p>第三條｜使用規範:會員不得利用本網站從事違法行為、散布惡意程式或侵害他人權益。</p>
+                            <p>第四條｜服務說明:本網站可能因系統維護或故障暫停服務，將盡合理努力恢復正常運作。</p>
+                            <p>第五條｜條款修訂:本網站得依法修訂條款並適時公告。會員若不同意，可依規定申請註銷帳號。</p>
+                            <div class="mb-3">
+                                <div class="form-check form-switch">
+                                    <input type="checkbox" class="form-check-input" id="switch01">
+                                    <label for="switch01" class="form-check-label">已閱讀會員條款</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="mb-3">
+                                <label for="registerUsername" class="form-label">帳號</label>
+                                <input type="text" class="form-control" id="registerUsername"
+                                    placeholder="請輸入一個大寫英文....">
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerPassword" class="form-label">密碼</label>
+                                <input type="password" class="form-control" id="registerPassword">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="rePassword" class="form-label">確認密碼</label>
+                                <input type="password" class="form-control" id="rePassword">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="registerEmail" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="registerEmail">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <a href="#" class="me-auto text-decoration-none" data-bs-toggle="modal"
+                        data-bs-target="#loginModal">
+                        已經有帳號，直接登入
+                    </a>
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">退出註冊</button>
+                    <button type="button" class="btn btn-primary" id="submitRegister" disabled>提交註冊</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- loginModal 登入按鈕-->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true"
+        data-bs-backdrop="static">
+
+        <div class="modal-dialog modal-dialog-centered auth-modal">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="loginModalLabel">會員登入</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="loginUsername" class="form-label">帳號</label>
+                        <input type="text" class="form-control" id="loginUsername">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">密碼</label>
+                        <input type="password" class="form-control" id="loginPassword">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <a href="#" class="me-auto text-decoration-none" data-bs-toggle="modal"
+                        data-bs-target="#registerModal">
+                        還沒有帳號，去註冊一個新帳號
+                    </a>
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">退出登入</button>
+                    <button type="button" class="btn btn-primary">提交登入</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- section03 幻燈片效果 carousel-->
+    <section id="S03">
+        <div id="carouselExampleCaptions" class="carousel slide">
+
+            <!-- 幻燈片指示按鈕 -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
+            <!-- 幻燈片內容 -->
+            <div class="carousel-inner">
+
+                <!-- 第一張：前端技術 -->
+                <div class="carousel-item bg-img active"
+                    style="background-image: url(images/leather01.jpg); height: 85vh;">
+
+                    <div class="carousel-caption craft-caption">
+                        <span class="craft-label" style="font-weight: 900;
+          font-family: 'Zen Maru Gothic', sans-serif;">01 / FOUNDATION</span>
+                        <h3 style="font-weight: 900;
+          font-family: 'Zen Maru Gothic', sans-serif;">以技術為基，細節為本</h3>
+                        <p class=" craft-intro">前端技術與實作</p>
+                        <ul class="craft-list">
+                            <li>HTML5：建立網頁結構</li>
+                            <li>CSS3：版面配置與視覺設計</li>
+                            <li>JavaScript：互動功能與表單驗證</li>
+                            <li>Bootstrap 5：響應式網頁排版</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 第二張：後端技術 -->
+                <div class="carousel-item bg-img" style="background-image: url(images/leather02.jpg); height: 85vh;">
+
+                    <div class="carousel-caption craft-caption">
+                        <span class="craft-label" style="font-weight: 900;
+          font-family: 'Zen Maru Gothic', sans-serif;">02 / BACKEND</span>
+                        <h3 style="font-weight: 900;
+          font-family: 'Zen Maru Gothic', sans-serif;">循序漸進，磨練程式實力</h3>
+                        <p class="craft-intro">後端技術與資料庫</p>
+                        <ul class="craft-list">
+                            <li>PHP：伺服器端程式設計</li>
+                            <li>Laravel：路由、控制器與模型</li>
+                            <li>MySQL：資料表設計與 SQL 查詢</li>
+                            <li>API：前後端資料傳遞</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 第三張：專案作品 -->
+                <div class="carousel-item bg-img" style="background-image: url(images/leather03.jpg); height: 85vh;">
+                    <div class="carousel-caption craft-caption">
+                        <span class="craft-label" style="font-weight: 900;
+          font-family: 'Zen Maru Gothic', sans-serif;">03 / PORTFOLIO</span>
+                        <h3 style="font-weight: 900;
+          font-family: 'Zen Maru Gothic', sans-serif;">將所學化為實際作品</h3>
+                        <p class="craft-intro">專案實作與作品集</p>
+                        <ul class="craft-list">
+                            <li>規劃並製作個人履歷網站</li>
+                            <li>實作會員註冊與登入介面</li>
+                            <li>練習資料庫 CRUD 操作</li>
+                            <li>持續測試、除錯與改善使用體驗</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 上一張 -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <!-- 下一張 -->
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
+    </section>
+
+    <!--section04 counterup 可量化的數據  AI生成-->
+    <section id="S04">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- 左側圖片 -->
+                <div class="col-md-5 bg-img" style="background-image: url(images/leather01.jpg);">
+                </div>
+
+                <!-- 右側自我介紹 -->
+                <div class="col-md-7 py-5 text-center" style="background-color: #F7F3EA; color: #292820;">
+
+                    <!-- 大標題與副標題 -->
+                    <span class="about-label" style="color: #92652F;">
+                        MY JOURNEY / CRAFTSMANSHIP
+                    </span>
+
+                    <h2 class="fw-bold mt-3 mb-3" style="color: #292820;">
+                        以匠心打磨每一行程式
+                    </h2>
+
+                    <p class="mb-5" style="color: #795B3A;">
+                        從基礎扎根，以實作累積實力，
+                        打造兼具功能與美感的網頁作品。
+                    </p>
+
+                    <!-- 01 學習歷程 -->
+                    <div class="text-start mb-4">
+                        <span class="about-label" style="color: #92652F;">
+                            01 / LEARNING
+                        </span>
+                        <h4 class="fw-bold mt-2">
+                            持續學習，累積實力
+                        </h4>
+                        <p style="color: #454238;">
+                            從基礎開始學習網頁開發，
+                            透過持續練習，逐步建立程式設計能力。
+                        </p>
+                    </div>
+
+                    <!-- 02 前端技術 -->
+                    <div class="text-start mb-4">
+                        <span class="about-label" style="color: #92652F;">
+                            02 / FRONTEND
+                        </span>
+                        <h4 class="fw-bold mt-2">
+                            以前端技術，實現設計想法
+                        </h4>
+                        <p style="color: #454238;">
+                            學習 HTML5、CSS3、JavaScript
+                            與 Bootstrap 5，實作網頁排版、
+                            互動功能及響應式設計。
+                        </p>
+                    </div>
+
+                    <!-- 03 後端技術 -->
+                    <div class="text-start mb-4">
+                        <span class="about-label" style="color: #92652F;">
+                            03 / BACKEND
+                        </span>
+                        <h4 class="fw-bold mt-2">
+                            從前端延伸，探索全端開發
+                        </h4>
+                        <p style="color: #454238;">
+                            持續學習 PHP、Laravel 與 MySQL，
+                            逐步掌握後端邏輯與資料庫操作。
+                        </p>
+                    </div>
+
+                    <!-- 04 專案目標 -->
+                    <div class="text-start mb-5">
+                        <span class="about-label" style="color: #92652F;">
+                            04 / GOAL
+                        </span>
+                        <h4 class="fw-bold mt-2">
+                            讓每一份努力，都成為作品
+                        </h4>
+                        <p style="color: #454238;">
+                            重視細節、邏輯與問題解決，
+                            透過實作持續改善作品品質與使用體驗。
+                        </p>
+                    </div>
+
+                    <!-- 量化數據 -->
+                    <div class="row text-center mt-4" style="border-top: 1px solid #D5C5AC;">
+                        <!-- 工作年資 -->
+                        <div class="col-6 col-lg-3 mt-4">
+                            <div class="stat-card p-3">
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-briefcase"></i>
+                                </div>
+                                <div class="stat-value">
+                                    <span class="counter stat-number">15</span>
+                                    <span class="stat-unit">年</span>
+                                </div>
+                                <h5>工作年資</h5>
+                                <p class="stat-en">Years of Experience</p>
+                            </div>
+                        </div>
+
+                        <!-- 考取證照 -->
+                        <div class="col-6 col-lg-3 mt-4">
+                            <div class="stat-card p-3">
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <div class="stat-value">
+                                    <span class="counter stat-number">6</span>
+                                    <span class="stat-unit">張</span>
+                                </div>
+                                <h5>考取證照</h5>
+                                <p class="stat-en">Certifications</p>
+                            </div>
+                        </div>
+
+                        <!-- 完成專案 -->
+                        <div class="col-6 col-lg-3 mt-4">
+                            <div class="stat-card p-3">
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-diagram-project"></i>
+                                </div>
+                                <div class="stat-value">
+                                    <span class="counter stat-number">0</span>
+                                    <span class="stat-unit">件</span>
+                                </div>
+                                <h5>完成專案</h5>
+                                <p class="stat-en">Completed Projects</p>
+                            </div>
+                        </div>
+
+                        <!-- 學習技術 -->
+                        <div class="col-6 col-lg-3 mt-4">
+                            <div class="stat-card p-3">
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-chart-column"></i>
+                                </div>
+                                <div class="stat-value">
+                                    <span class="counter stat-number">7</span>
+                                    <span class="stat-unit">項</span>
+                                </div>
+                                <h5>學習技術</h5>
+                                <p class="stat-en">Technologies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION05：我的工作信念  AI生成-->
+    <section id="S05" class="belief-section py-5">
+        <div class="container">
+
+            <!-- 區塊標題 -->
+            <div class="belief-heading text-center mb-5">
+                <h2 class="fw-900">我的工作信念</h2>
+            </div>
+            <div class="row g-4">
+                <!-- 01 主動解決問題 -->
+                <div class="col-12 col-md-4">
+                    <div class="belief-card h-100">
+
+                        <div class="belief-icon">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+
+                        <h3>01｜主動解決問題</h3>
+
+                        <div class="belief-card-divider"></div>
+
+                        <p>
+                            面對問題時，我會先釐清原因、拆解需求，
+                            再逐步尋找合適的解決方案。不只找出問題所在，
+                            更重視實際執行與結果，從每一次挑戰中累積經驗，
+                            提升解決問題的能力。
+                        </p>
+
+                    </div>
+                </div>
+
+                <!-- 02 持續學習成長 -->
+                <div class="col-12 col-md-4">
+                    <div class="belief-card h-100">
+
+                        <div class="belief-icon">
+                            <i class="fa-solid fa-book-open-reader"></i>
+                        </div>
+
+                        <h3>02｜持續學習成長</h3>
+
+                        <div class="belief-card-divider"></div>
+
+                        <p>
+                            保持好奇心與學習熱忱，持續精進專業技能，
+                            並將所學應用於實際練習與專案中。
+                            我相信透過不斷嘗試、修正與累積，
+                            能讓自己逐步成長，打造更完善的作品。
+                        </p>
+
+                    </div>
+                </div>
+
+                <!-- 03 重視溝通合作 -->
+                <div class="col-12 col-md-4">
+                    <div class="belief-card h-100">
+
+                        <div class="belief-icon">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+
+                        <h3>03｜重視溝通合作</h3>
+
+                        <div class="belief-card-divider"></div>
+
+                        <p>
+                            我重視團隊間的溝通與協作，會主動確認需求、
+                            分享想法，並尊重不同的觀點。
+                            透過清楚的溝通與彼此配合，讓工作流程更順暢，
+                            也讓最終成果更符合目標。
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!-- 底部信念 -->
+            <div class="s05-footer text-center mt-5">
+                <span>把事情做好，把細節做對，讓每一次努力都創造價值。</span>
+            </div>
+        </div>
+    </section>
+
+    <!--section06 關於我  AI生成-->
+    <section id="S06" style="position: relative;">
+        <div class="row">
+            <div class="col-md-5 bg-img d-none d-md-block" style="background-image: url(images/leather06.jpg);"></div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-md-7 about-content">
+
+                    <!-- 標題 -->
+                    <div class="about-heading">
+                        <div class="about-title">
+                            <h2>關於我</h2>
+                            <span class="about-en">ABOUT ME</span>
+                        </div>
+                    </div>
+
+                    <!-- 自我介紹 -->
+                    <div class="about-text">
+                        <p>
+                            我是一名正在持續精進技術的全端程式設計師，
+                            對網站開發與程式設計充滿熱情。
+                            從前端畫面設計到後端資料處理，
+                            我希望透過完整的開發流程，打造兼具實用性與良好使用體驗的網站。
+                        </p>
+
+                        <p>
+                            我相信好的作品不只是畫面美觀，
+                            更需要清楚的架構、穩定的功能與良好的使用體驗。
+                            面對問題時，我會主動釐清需求、拆解問題，
+                            並透過實際測試與持續修正，逐步提升程式品質。
+                        </p>
+
+                        <p>
+                            目前我正透過實作累積全端開發經驗，
+                            持續學習 PHP、Laravel、MySQL，
+                            並逐步整合 HTML、CSS、JavaScript 等前端技術。
+                            期望透過完整專案，強化前後端整合、
+                            資料庫操作與問題排除能力。
+                        </p>
+                    </div>
+
+                    <!-- 技術標籤 -->
+                    <div class="about-skills">
+                        <span>PHP</span>
+                        <span>Laravel</span>
+                        <span>MySQL</span>
+                        <span>HTML / CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+
+                    <!-- 按鈕 -->
+                    <a href="#S10" class="about-btn">
+                        探索我的學習歷程
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section 7 -- 作品集 AI -->
+    <section id="S07">
+        <div class="container my-5">
+
+            <div class="h1 text-center section-title my-4">
+                精選作品集
+            </div>
+
+            <p class="text-center section-desc mb-5">
+                從第一行 HTML 到完整的全端應用，
+                記錄每一次學習與實作的成長歷程。
+                透過不斷練習、解決問題與優化程式，
+                逐步累積獨立開發的能力。
+            </p>
+
+            <div class="row">
+
+                <!-- 作品 01 -->
+                <div class="col-md-6 d-flex align-items-center mt-3">
+                    <div class="portfolio-item d-flex align-items-center h-100 w-100">
+
+                        <i class="fa-solid fa-code fa-6x portfolio-icon me-3"></i>
+
+                        <div class="d-flex flex-column w-100">
+                            <div class="h3 portfolio-title">
+                                靜態網頁設計
+                            </div>
+                            <p class="portfolio-tech mb-2"> 使用技術：HTML / CSS </p>
+                            <p class="portfolio-desc">
+                                透過企業形象網站製作，練習 HTML 結構與 CSS 排版，
+                                從零開始理解網頁布局、配色及視覺設計，
+                                學會將設計概念轉換成實際網頁。
+                            </p>
+                            <a href="日系木頭.html" target="_blank" class="btn portfolio-btn d-block mt-auto">
+                                <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>
+                                觀看作品
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 作品 02 -->
+                <div class="col-md-6 d-flex align-items-center mt-3">
+                    <div class="portfolio-item d-flex align-items-center h-100 w-100">
+                        <i class="fa-solid fa-database fa-6x portfolio-icon me-3"></i>
+                        <div class="d-flex flex-column w-100">
+                            <div class="h3 portfolio-title">
+                                美食資料平台
+                            </div>
+                            <p class="portfolio-tech mb-2"> 使用技術：JavaScript / jQuery / AJAX </p>
+                            <p class="portfolio-desc">
+                                串接政府開放資料，製作地方美食資訊展示平台，
+                                學習非同步資料讀取、JSON 處理與動態畫面更新，
+                                理解前端如何與外部資料互動。
+                            </p>
+                            <a href="0930java-json.html" target="_blank" class="btn portfolio-btn d-block mt-auto">
+                                <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>
+                                觀看作品
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 作品 03 -->
+                <div class="col-md-6 d-flex align-items-center mt-3">
+                    <div class="portfolio-item d-flex align-items-center h-100 w-100">
+                        <i class="fa-solid fa-laptop-code fa-6x portfolio-icon me-3"></i>
+                        <div class="d-flex flex-column w-100">
+                            <div class="h3 portfolio-title"> 響應式履歷 </div>
+
+                            <p class="portfolio-tech mb-2">
+                                使用技術：Bootstrap / CSS / RWD
+                            </p>
+                            <p class="portfolio-desc">
+                                運用 Bootstrap 格線系統製作個人履歷網站，
+                                整合學經歷、技能與作品展示，
+                                學習響應式布局及元件設計，
+                                提升跨裝置閱讀體驗。
+                            </p>
+
+                            <a href="AI課程報名網站.html" target="_blank" class="btn portfolio-btn d-block mt-auto">
+                                <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>
+                                觀看作品
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 作品 04 -->
+                <div class="col-md-6 d-flex align-items-center mt-3">
+                    <div class="portfolio-item d-flex align-items-center h-100 w-100">
+                        <i class="fa-solid fa-server fa-6x portfolio-icon me-3"></i>
+                        <div class="d-flex flex-column w-100">
+                            <div class="h3 portfolio-title"> 全端管理系統 </div>
+
+                            <p class="portfolio-tech mb-2">
+                                使用技術：Vue / Flask / MySQL
+                            </p>
+                            <p class="portfolio-desc">
+                                整合前端介面、後端 API 與資料庫，
+                                實作資料新增、查詢、修改及刪除功能，
+                                學習系統架構與資料傳遞流程，
+                                建立完整的全端開發觀念。
+                            </p>
+
+                            <a href="#" target="_blank" class="btn portfolio-btn d-block mt-auto">
+                                <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>
+                                觀看作品
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--section08 學經歷介紹 AI 生成(要再調整修改)-->
+    <section id="S08" style="position: relative;">
+        <div class="container">
+            <div class="row align-items-stretch">
+
+                <!-- 左側文字區塊 -->
+                <div class="col-md-7">
+                    <div class="h-100 bg-white rounded p-3">
+
+                        <!-- 區塊標題 -->
+                        <div class="h1 text-center text-info my-4">
+                            學經歷介紹
+                        </div>
+
+                        <dl class="row experience-list">
+
+                            <!-- 個人背景 -->
+                            <dt class="col-sm-3">個人背景</dt>
+                            <dd class="col-sm-9">
+                                曾從事手工皮革製作相關工作，
+                                從材料處理、商品製作到成品檢查，
+                                累積實務操作與細節管理經驗。
+                                在工作過程中培養耐心、細心及獨立解決問題的能力。
+                            </dd>
+
+                            <!-- 實務經驗 -->
+                            <dt class="col-sm-3">實務經驗</dt>
+                            <dd class="col-sm-9">
+                                熟悉皮革材料處理、商品加工與製作品質檢查，
+                                重視製作流程、細節品質及工作效率。
+                                將過去實務工作中累積的流程管理與問題分析能力，
+                                延伸運用於網頁設計與程式開發學習。
+                            </dd>
+
+                            <!-- 技術進修 -->
+                            <dt class="col-sm-3">技術進修</dt>
+                            <dd class="col-sm-9">
+                                持續進修網頁設計與程式開發相關技術，
+                                從 HTML、CSS、JavaScript 建立前端基礎，
+                                並進一步學習 PHP、Laravel 與 MySQL，
+                                逐步累積前後端開發與資料庫應用能力。
+                            </dd>
+
+                            <!-- 職涯目標 -->
+                            <dt class="col-sm-3">職涯目標</dt>
+                            <dd class="col-sm-9">
+                                <dl class="row">
+
+                                    <dt class="col-sm-4">發展方向</dt>
+                                    <dd class="col-sm-8">
+                                        以全端網頁工程師為職涯目標，
+                                        持續累積網站開發與前後端整合經驗。
+                                    </dd>
+
+                                    <dt class="col-sm-4">技術規劃</dt>
+                                    <dd class="col-sm-8">
+                                        深化 PHP、Laravel、MySQL 等後端技術，
+                                        並持續強化 HTML、CSS、JavaScript，
+                                        規劃進一步學習 Vue 3。
+                                    </dd>
+
+                                    <dt class="col-sm-4">未來展望</dt>
+                                    <dd class="col-sm-8">
+                                        期望結合過去實務經驗與程式開發能力，
+                                        參與實際專案，打造兼具實用性、
+                                        穩定性與良好使用體驗的網站應用。
+                                    </dd>
+
+                                </dl>
+                            </dd>
+
+                        </dl>
+                    </div>
+                </div>
+
+                <!-- 右側圖片 -->
+                <div class="col-md-5 bg-img d-none d-md-block" style="background-image: url(images/leather02.jpg);
+                       min-height: 500px;
+                       background-size: cover;
+                       background-position: center;">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- section09 技能與工具 -->
+    <section id="S09" class="py-5 skill-section">
+        <div class="container">
+
+            <!-- 區塊標題 -->
+            <div class="text-center mb-5">
+                <h1 class="mytitle-03" style="font-weight: 900;font-family: 'Zen Maru Gothic';">技能與工具</h1>
+                <p class="skill-subtitle" style="font-weight: 900;font-family: 'Zen Maru Gothic';">Skills & Tools</p>
+                <p class="skill-intro">
+                    從前端網頁設計到後端資料庫應用，持續累積開發能力。
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- 前端技術 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card h-100">
+                        <div class="skill-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3 style="font-weight: 900;font-family: 'Zen Maru Gothic';">前端技術</h3>
+                        <p class="skill-en" style="font-weight: 900;font-family: 'Zen Maru Gothic';">Front-end
+                            Development</p>
+                        <ul>
+                            <li>HTML：網頁結構與語意標籤</li>
+                            <li>CSS：網頁樣式與版面配置</li>
+                            <li>JavaScript：網頁互動功能</li>
+                            <li>Bootstrap：響應式網頁設計</li>
+                            <li>jQuery：DOM 操作與事件處理</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 後端技術 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card h-100">
+                        <div class="skill-icon">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <h3 style="font-weight: 900;font-family: 'Zen Maru Gothic';">後端技術</h3>
+                        <p class="skill-en" style="font-weight: 900;font-family: 'Zen Maru Gothic';">Back-end
+                            Development</p>
+                        <ul>
+                            <li>PHP：伺服器端程式開發</li>
+                            <li>Laravel：MVC 網站架構</li>
+                            <li>MySQL：資料庫管理</li>
+                            <li>CRUD：資料新增、查詢、修改、刪除</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 開發工具 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card h-100">
+                        <div class="skill-icon">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3 style="font-weight: 900;font-family: 'Zen Maru Gothic';">開發工具</h3>
+                        <p class="skill-en" style="font-weight: 900;font-family: 'Zen Maru Gothic';">Development Tools
+                        </p>
+                        <ul>
+                            <li>Visual Studio Code：程式碼編輯</li>
+                            <li>XAMPP：本機開發環境</li>
+                            <li>phpMyAdmin：資料庫管理</li>
+                            <li>Git：版本控制基礎</li>
+                            <li>Figma：介面設計與規劃</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- section10 學習歷程 Timeline -->
+    <section id="S10" class="py-5 timeline-section">
+
+        <div class="container">
+
+            <!-- 區塊標題 -->
+            <div class="text-center mb-5">
+                <h1 class="mytitle-03" style="font-weight: 900; font-family: 'Zen Maru Gothic';">
+                    學習歷程
+                </h1>
+
+                <p class="timeline-subtitle" style="font-weight: 900; font-family: 'Zen Maru Gothic';">
+                    Learning Timeline
+                </p>
+
+                <p class="timeline-intro">
+                    從網頁基礎與程式邏輯出發，逐步建立前後端開發能力。
+                </p>
+            </div>
+
+            <!-- 第一階段：PHP 程式基礎 -->
+            <div class="row timeline-item">
+                <div class="col-md-6 timeline-content">
+                    <div class="timeline-card">
+
+                        <h3 class="timeline-number" style="font-weight: 900; font-family: 'Zen Maru Gothic';">
+                            01 - PHP 程式基礎
+                        </h3>
+
+                        <p class="timeline-en">PHP Fundamentals</p>
+
+                        <p>
+                            從 PHP 程式語言建立後端開發基礎，
+                            學習變數、條件判斷、迴圈與函式，
+                            理解程式邏輯及基本物件導向概念。
+                        </p>
+
+                        <div class="timeline-tags">
+                            <span>PHP</span>
+                            <span>OOP</span>
+                            <span>Programming Logic</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 timeline-empty"></div>
+            </div>
+
+            <!-- 第二階段：MySQL 資料庫 -->
+            <div class="row timeline-item">
+                <div class="col-md-6 timeline-empty"></div>
+
+                <div class="col-md-6 timeline-content">
+                    <div class="timeline-card">
+
+                        <h3 class="timeline-number" style="font-weight: 900; font-family: 'Zen Maru Gothic';">
+                            02 - MySQL 資料庫應用
+                        </h3>
+
+                        <p class="timeline-en">Database Development</p>
+
+                        <p>
+                            學習資料庫結構與 SQL 基本語法，
+                            認識資料表設計及資料操作方式，
+                            建立資料新增、查詢、修改與刪除的基礎概念。
+                        </p>
+
+                        <div class="timeline-tags">
+                            <span>MySQL</span>
+                            <span>SQL</span>
+                            <span>CRUD</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第三階段：Laravel 後端架構 -->
+            <div class="row timeline-item">
+                <div class="col-md-6 timeline-content">
+                    <div class="timeline-card">
+
+                        <h3 class="timeline-number" style="font-weight: 900; font-family: 'Zen Maru Gothic';">
+                            03 - Laravel 後端架構
+                        </h3>
+
+                        <p class="timeline-en">Laravel Framework</p>
+
+                        <p>
+                            接觸 Laravel MVC 架構，
+                            學習 Route、Controller、Model 與 Blade，
+                            理解路由處理、資料傳遞及網站後端的基本運作流程。
+                        </p>
+
+                        <div class="timeline-tags">
+                            <span>Laravel</span>
+                            <span>MVC</span>
+                            <span>Blade</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 timeline-empty"></div>
+            </div>
+
+            <!-- 第四階段：HTML 與 CSS -->
+            <div class="row timeline-item">
+                <div class="col-md-6 timeline-empty"></div>
+
+                <div class="col-md-6 timeline-content">
+                    <div class="timeline-card">
+
+                        <h3 class="timeline-number" style="font-weight: 900; font-family: 'Zen Maru Gothic';">
+                            04 - HTML 與 CSS 網頁設計
+                        </h3>
+
+                        <p class="timeline-en">Web Design Fundamentals</p>
+
+                        <p>
+                            建立網頁結構與視覺設計能力，
+                            學習版面配置、樣式控制及響應式設計，
+                            練習製作不同裝置皆能正常瀏覽的網頁。
+                        </p>
+
+                        <div class="timeline-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>RWD</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第五階段：JavaScript 前端互動 -->
+            <div class="row timeline-item">
+                <div class="col-md-6 timeline-content">
+                    <div class="timeline-card">
+
+                        <h3 class="timeline-number" style="font-weight: 900; font-family: 'Zen Maru Gothic';">
+                            05 - JavaScript 前端互動
+                        </h3>
+
+                        <p class="timeline-en">Front-end Interaction</p>
+
+                        <p>
+                            學習 JavaScript 與 jQuery，
+                            練習 DOM 操作、事件處理及表單驗證，
+                            搭配 Bootstrap 建立具備互動功能的網頁介面。
+                        </p>
+
+                        <div class="timeline-tags">
+                            <span>JavaScript</span>
+                            <span>jQuery</span>
+                            <span>Bootstrap</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 timeline-empty"></div>
+            </div>
+
+            <!-- 第六階段：前後端整合 -->
+            <div class="row timeline-item">
+                <div class="col-md-6 timeline-empty"></div>
+
+                <div class="col-md-6 timeline-content">
+                    <div class="timeline-card">
+
+                        <h3 class="timeline-number" style="font-weight: 900; font-family: 'Zen Maru Gothic';">
+                            06 - 前後端整合應用
+                        </h3>
+
+                        <p class="timeline-en">Full Stack Integration</p>
+
+                        <p>
+                            以既有前端與後端基礎為起點，
+                            進一步規劃 Vue 3 與 API 應用學習，
+                            理解前端介面與後端資料交換的整合方式。
+                        </p>
+
+                        <div class="timeline-tags">
+                            <span>Vue 3</span>
+                            <span>API</span>
+                            <span>Integration</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第七階段：專案實作與作品累積 -->
+            <div class="row timeline-item">
+                <div class="col-md-6 timeline-content">
+                    <div class="timeline-card">
+
+                        <h3 class="timeline-number" style="font-weight: 900; font-family: 'Zen Maru Gothic';">
+                            07 - 專案實作與作品累積
+                        </h3>
+
+                        <p class="timeline-en">Project Development</p>
+
+                        <p>
+                            將所學技術逐步應用於實作專案，
+                            練習需求分析、功能規劃與問題排除，
+                            持續累積開發經驗並完善個人作品集。
+                        </p>
+
+                        <div class="timeline-tags">
+                            <span>Portfolio</span>
+                            <span>Project</span>
+                            <span>Problem Solving</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 timeline-empty"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- section11 專案實作流程 -->
+    <section id="S11" class="py-5 project-section">
+        <div class="container">
+
+            <!-- 區塊標題 -->
+            <div class="text-center mb-5">
+                <h1 class="mytitle-03" style="font-weight: 900;font-family: 'Zen Maru Gothic';">專案實作流程</h1>
+                <p class="project-subtitle">Project Development Process</p>
+                <p class="project-intro">
+                    將學習到的技術應用於實際專案，從規劃、設計到開發與測試，逐步完成作品。
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- 第一階段：需求分析 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card h-100 wow animate__fadeInUp">
+                        <div class="project-number">01</div>
+                        <div class="project-icon">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                        </div>
+                        <h3 style="font-weight: 900;font-family: 'Zen Maru Gothic';">需求分析</h3>
+                        <p class="project-en" style="font-weight: 900;font-family: 'Zen Maru Gothic';">Requirement
+                            Analysis</p>
+                        <p>
+                            確認網站的目標與使用者需求，整理需要呈現的內容、
+                            頁面區塊及功能項目。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 第二階段：架構規劃 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card h-100 wow animate__fadeInUp">
+                        <div class="project-number">02</div>
+                        <div class="project-icon">
+                            <i class="fa-solid fa-sitemap"></i>
+                        </div>
+                        <h3 style="font-weight: 900;font-family: 'Zen Maru Gothic';">架構規劃</h3>
+                        <p class="project-en" style="font-weight: 900;font-family: 'Zen Maru Gothic';">Structure
+                            Planning</p>
+                        <p>
+                            規劃網站導覽、頁面架構與資料內容，
+                            建立清楚的開發方向。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 第三階段：介面設計 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card h-100 wow animate__fadeInUp">
+                        <div class="project-number">03</div>
+                        <div class="project-icon">
+                            <i class="fa-solid fa-pen-ruler"></i>
+                        </div>
+                        <h3 style="font-weight: 900;font-family: 'Zen Maru Gothic';">介面設計</h3>
+                        <p class="project-en" style="font-weight: 900;font-family: 'Zen Maru Gothic';">UI Design</p>
+                        <p>
+                            設定網站主題、色彩與版面配置，
+                            讓資訊呈現清楚並兼顧使用者體驗。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 第四階段：前端開發 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card h-100 wow animate__fadeInUp">
+                        <div class="project-number">04</div>
+                        <div class="project-icon">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 style="font-weight: 900;font-family: 'Zen Maru Gothic';">前端開發</h3>
+                        <p class="project-en" style="font-weight: 900;font-family: 'Zen Maru Gothic';">Front-end
+                            Development</p>
+                        <p>
+                            使用 HTML、CSS、JavaScript 與 Bootstrap
+                            建立網頁畫面、互動效果及響應式版型。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 第五階段：後端整合 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card h-100 wow animate__fadeInUp">
+                        <div class="project-number">05</div>
+                        <div class="project-icon">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h3 style="font-weight: 900;font-family: 'Zen Maru Gothic';">後端與資料庫整合</h3>
+                        <p class="project-en" style="font-weight: 900;font-family: 'Zen Maru Gothic';">Back-end
+                            Integration</p>
+                        <p>
+                            使用 PHP、Laravel 與 MySQL，
+                            串接資料庫並實作資料新增、查詢、修改及刪除功能。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 第六階段：測試與調整 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card h-100 wow animate__fadeInUp">
+                        <div class="project-number">06</div>
+                        <div class="project-icon">
+                            <i class="fa-solid fa-vial-circle-check"></i>
+                        </div>
+                        <h3 style="font-weight: 900;font-family: 'Zen Maru Gothic';">測試與調整</h3>
+                        <p class="project-en" style="font-weight: 900;font-family: 'Zen Maru Gothic';">Testing &
+                            Optimization</p>
+                        <p>
+                            檢查頁面連結、功能操作與資料正確性，
+                            修正問題並持續改善程式品質。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- section12 問題解決與學習反思 -->
+    <section id="S12" class="py-5 reflection-section">
+        <div class="container">
+            <!-- 區塊標題 -->
+            <div class="text-center mb-5">
+                <h1 class="mytitle-03" style="font-weight: 900;font-family: 'Zen Maru Gothic';">問題解決與學習反思</h1>
+                <p class="reflection-subtitle">Problem Solving & Reflection</p>
+                <p class="reflection-intro">
+                    每一次錯誤都是重新理解程式的機會，
+                    從問題中累積經驗，讓自己持續進步。
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="reflection-card h-100">
+                        <div class="reflection-icon"> <i class="fa-solid fa-magnifying-glass"> </i></div>
+                        <h3 style="font-weight: 900;font-family: 'Zen Maru Gothic';">01. 分析問題</h3>
+                        <p class="reflection-en">Problem Analysis</p>
+                        <p>遇到程式錯誤時，先確認錯誤訊息、發生位置與執行條件，釐清問題的原因，而不是直接修改不理解的程式碼。</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="reflection-card h-100">
+                        <div class="reflection-icon"> <i class="fa-solid fa-lightbulb"></i> </div>
+                        <h3 style="font-weight: 900;font-family: 'Zen Maru Gothic';">02. 尋找解決方法</h3>
+                        <p class="reflection-en">Find Solutions</p>
+                        <p>透過官方文件、課程教材與技術資料，比較不同解決方式，理解程式背後的運作原理。</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="reflection-card h-100">
+                        <div class="reflection-icon"> <i class="fa-solid fa-bug"></i> </div>
+                        <h3 style="font-weight: 900;font-family: 'Zen Maru Gothic';">03. 實際測試與修正</h3>
+                        <p class="reflection-en">Testing & Debugging</p>
+                        <p> 將修正方式實際套用到程式中，透過測試確認結果，並檢查是否影響其他功能。</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="reflection-card h-100">
+                        <div class="reflection-icon"> <i class="fa-solid fa-book-open"></i> </div>
+                        <h3 style="font-weight: 900;font-family: 'Zen Maru Gothic';">04. 整理與累積經驗</h3>
+                        <p class="reflection-en">Learning & Improvement</p>
+                        <p> 記錄遇到的問題與解決過程，整理容易混淆的觀念，讓每次實作都成為下一次進步的基礎。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="reflection-message text-center mt-5">
+                <h2 style="font-weight: 900;font-family: 'Zen Maru Gothic';">持續學習，讓每一次實作都成為成長的累積。</h2>
+                <p> Stay Curious. Keep Learning. Keep Building.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- section13 未來展望 -->
+    <section id="S13">
+        <div class="row align-items-stretch g-4">
+
+            <!-- 左側：未來願景 -->
+            <div class="col-md-6 bg-img d-flex s13-panel">
+                <div class="col-11 col-lg-9 p-4 shadow-sm d-flex flex-column s13-card">
+
+                    <h1 class="s13-title" style="font-weight: 900;font-family: 'Zen Maru Gothic';">
+                        未來願景
+                    </h1>
+
+                    <small class="s13-subtitle" style="font-weight: 900;font-family: 'Zen Maru Gothic';">
+                        Future Vision
+                    </small>
+
+                    <div class="h2 s13-heading" style="font-weight: 900;font-family: 'Zen Maru Gothic';">
+                        持續精進，累積實力
+                    </div>
+
+                    <ul class="s13-list mb-3">
+                        <li>前端技術：HTML、CSS、JavaScript、Bootstrap</li>
+                        <li>後端開發：PHP、Laravel、MySQL</li>
+                        <li>持續強化前後端整合與資料庫應用能力</li>
+                        <li>累積實作經驗，打造完整且可執行的專案</li>
+                        <li>重視程式可讀性、使用者體驗與程式維護</li>
+                    </ul>
+
+                    <a href="#S07" class="btn w-100 mt-auto s13-button">
+                        查看我的作品
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- 右側：職涯發展 -->
+            <div class="col-md-6 bg-img d-flex s13-panel">
+                <div class="col-11 col-lg-9 p-4 shadow-sm d-flex flex-column s13-card">
+
+                    <h1 class="s13-title" style="font-weight: 900;font-family: 'Zen Maru Gothic';">
+                        職涯發展
+                    </h1>
+
+                    <small class="s13-subtitle" style="font-weight: 900;font-family: 'Zen Maru Gothic';">
+                        Career Development
+                    </small>
+
+                    <div class="h2 s13-heading" style="font-weight: 900;font-family: 'Zen Maru Gothic';">
+                        探索 AI，拓展技術視野
+                    </div>
+
+                    <ul class="s13-list mb-3">
+                        <li>AI 應用：了解生成式 AI 與輔助開發工具</li>
+                        <li>開發效率：運用 AI 協助除錯、分析與文件整理</li>
+                        <li>技術判斷：驗證 AI 產出的程式碼與技術資訊</li>
+                        <li>全端整合：持續累積前端、後端與資料庫經驗</li>
+                        <li>職涯目標：朝全端網頁工程師方向發展</li>
+                    </ul>
+
+                    <a href="#S14" class="btn w-100 mt-auto s13-button">
+                        聯絡我
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--section14 與我聯絡-->
+    <section id="S14">
+        <div class="container py-4">
+
+            <div class="h1 text-center section-title my-4 fw-900">
+                聯絡我們 CONTACT ME
+            </div>
+
+            <div class="row">
+
+                <!-- 左側：聯絡表單 -->
+                <div class="col-md-6">
+                    <form id="contactForm">
+                        <!-- 姓名 -->
+                        <div class="mb-3 form-floating">
+                            <input type="text" class="form-control form-control-lg" placeholder=" " id="contactName">
+
+                            <label for="contactName" class="form-label">
+                                姓名
+                            </label>
+                        </div>
+
+                        <!-- 電子信箱 -->
+                        <div class="mb-3 form-floating">
+                            <input type="email" class="form-control form-control-lg" placeholder=" " id="contactEmail">
+
+                            <label for="contactEmail" class="form-label">
+                                電子信箱
+                            </label>
+                        </div>
+
+                        <!-- 聯絡事項 -->
+                        <div class="mb-3">
+                            <select name="contactType" id="contactType" class="form-select form-select-lg">
+                                <option value="" class="text-center" disabled selected>請選擇聯絡事項</option>
+                                <option value="皮件訂製">皮件訂製</option>
+                                <option value="營業時間">營業時間</option>
+                                <option value="體驗教學課程">體驗教學課程</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+
+                        <!-- 訊息內容 -->
+                        <div class="mb-3">
+                            <textarea name="contactMessage" id="contactMessage" class="form-control my-3" cols="10"
+                                rows="8" placeholder="請輸入訊息內容......"></textarea>
+                            <!-- 按鈕 -->
+                            <div class="text-end my-3">
+                                <button type="reset" class="btn btn-secondary">取消</button>
+                                <button type="button" class="btn btn-primary">送出</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+                <!-- 右側：Google Maps -->
+                <div class="col-md-6">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3641.1972125221496!2d120.69517204066135!3d24.129711374196653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d857eca2dc5%3A0xa1ff06acd071d4f7!2z5aSq6Zm96Z6E5bel5oi_!5e0!3m2!1szh-TW!2stw!4v1793674961773!5m2!1szh-TW!2stw"
+                        width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- S15 Footer -->
+    <footer id="S15" class="footer-section">
+
+        <div class="container py-5">
+
+            <div class="row gy-4">
+
+                <!-- 品牌介紹 -->
+                <div class="col-md-5">
+                    <h2 class="footer-brand mb-3"><a href="#S03"
+                            style="color: var(--gold-main);text-decoration: none;font-weight: 900;font-family: 'Zen Maru Gothic';">ALL
+                            BE MINE</a></h2>
+                    <p class="footer-description">
+                        珍藏每一個值得紀念的時刻。
+                        <br>
+                        以手作工藝，留下皮革與時間交織的溫度。
+                    </p>
+
+                </div>
+
+                <!-- 快速導覽 -->
+                <div class="col-md-4">
+                    <h5 class="footer-title mb-3" style="font-weight: 900;font-family: 'Zen Maru Gothic';">QUICK LINKS
+                    </h5>
+
+                    <ul class="footer-nav">
+                        <li><a href="#S06">關於我</a>　<span><a href="#S05">工作信念</a></span></li>
+                        <li><a href="#S07">作品展示</a>　<span><a href="#S14">聯絡我們</a></span></li>
+                    </ul>
+                </div>
+                <!-- 社群連結 -->
+                <div class="col-md-3">
+                    <h5 class="footer-title mb-3" style="font-weight: 900;font-family: 'Zen Maru Gothic';">FOLLOW US
+                    </h5>
+                    <div class="footer-social">
+                        <a href="#S01" aria-label="socialLink">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#S01" aria-label="socialLink">
+                            <i class="fa-brands fa-line"></i>
+                        </a>
+                        <a href="#S01" aria-label="socialLink">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="#S01" aria-label="socialLink">
+                            <i class="fa-regular fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="text-center footer-copyright">Copyright © 2026 ALL BE MINE. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        const registerTerms = document.querySelector("#switch01");
+        const submitRegister = document.querySelector("#submitRegister");
+
+        registerTerms.addEventListener("change", function () {
+            submitRegister.disabled = !this.checked;
+        });
+    </script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
+
+    <script>
+
+        const counterUp = window.counterUp.default
+        const callback = entries => {
+            entries.forEach(entry => {
+                const el = entry.target
+                if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                    counterUp(el, {
+                        duration: 2000,
+                        delay: 16,
+                    })
+                    el.classList.add('is-visible')
+                    IO.unobserve(el);
+                }
+            })
+        }
+        const IO = new IntersectionObserver(callback, {
+            threshold: 0.5
+        });
+        const els = document.querySelectorAll('.counter')
+        els.forEach(el => {
+            IO.observe(el)
+        })
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+    <script>
+        new WOW({
+            boxClass: 'wow',
+            animateClass: 'animate__animated',
+            offset: 100,
+            mobile: true,
+            live: true
+        }).init();
+    </script>
+
+    <script>
+
+        const navbar = document.querySelector("#S02");
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 10) {
+                navbar.classList.add("is-scrolled");
+            } else {
+                navbar.classList.remove("is-scrolled");
+            }
+        }, { passive: true });
+    </script>
+
+</body>
+
+</html>
